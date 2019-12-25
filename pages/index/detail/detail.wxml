@@ -1,0 +1,192 @@
+<view class='main'>
+  <view class='content1'>
+    <image class='content1_img' src='{{info.img}}'></image>
+    <view class='content1_viewv'>
+      <view class='content1_viewv_top'>{{info.title}}</view>
+      <view class='content1_viewv_bottom'>{{info.name}}--{{array[info.type]}}</view>
+    </view>
+    <view class='content1_viewh'>
+      <view class='content1_viewh_left'>￥{{info.price}}</view>
+      <view class='split'>/</view>
+      <view wx:if="{{info.ctype==0}}" class='content1_viewh_right'>天</view>
+      <view wx:elif="{{info.ctype==1}}" class='content1_viewh_right'>次</view>
+      <view wx:elif="{{info.ctype==2}}" class='content1_viewh_right'>小时</view>
+      <view wx:elif="{{info.ctype==3}}" class='content1_viewh_right'>周</view>
+      <view wx:elif="{{info.ctype==4}}" class='content1_viewh_right'>月</view>
+    </view>
+  </view>
+  <view class='content2'>
+    <view class='content2_view1'>
+      <view class='content2_view1_left'>工作时间</view>
+      <view class='content2_view1_right'>
+        <view>上午 {{info.atime1}}点~{{info.atime2}}点</view>
+        <view>下午 {{info.ptime1}}点~{{info.ptime2}}</view>
+      </view>
+    </view>
+    <view class='content2_view2'>
+      <view class='content2_view2_left'>工作日期</view>
+      <view class='content2_view2_right'>{{info.wtime1}}日起</view>
+    </view>
+    <view class='content2_view2'>
+      <view class='content2_view2_left'>工作地点</view>
+      <view class='content2_view2_right'>{{info.area}}</view>
+    </view>
+  </view>
+  <view class='content3'>
+    <view class='content3_view1'>工作要求</view>
+    <view class='content3_view2'>
+      <view class='content3_view2_left'>人数需求</view>
+      <view class='content3_view2_right'>{{info.need}}人</view>
+    </view>
+    <view class='content3_view2'>
+      <view class='content3_view2_left'>工作天数</view>
+      <view class='content3_view2_right'>{{info.day}}天</view>
+    </view>
+    <view class='content3_view2' hidden="{{info.welfare=='' || info.welfare==null}}">
+      <view class='content3_view2_left'>福利待遇</view>
+      <view class='content3_view2_right'>{{info.welfare}}</view>
+    </view>
+    <view  hidden="{{info.mark=='' || info.mark==null}}" class='content3_view2'>
+      <view class='content3_view2_left'>
+        <text decode='true'>备&emsp;&emsp;注</text>
+      </view>
+      <view class='content3_view2_right'>{{info.mark}}</view>
+    </view>
+    <view class='content3_view2'>
+      <view class='content3_view2_left'>
+        <text decode='true'>性&emsp;&emsp;别</text>
+      </view>
+      <view  wx:if='{{info.sex==0}}' class='content3_view2_right'>
+        <text>不限</text>
+      </view>
+      <view  wx:if='{{info.sex==1}}' class='content3_view2_right'>
+        <text>男</text>
+      </view>
+      <view  wx:if='{{info.sex==2}}' class='content3_view2_right'>
+        <text>女</text>
+      </view>
+    </view>
+    <view  hidden='{{info.age1==0}}' class='content3_view2'>
+      <view class='content3_view2_left'>
+        <text decode='true'>年&emsp;&emsp;龄</text>
+      </view>
+      <view class='content3_view2_right'>{{info.age1}}岁~{{info.age2}}岁</view>
+    </view>
+    
+    <view wx:if='{{info.type>=2 && info.type<=22}}'>
+      <view  hidden="{{info.chara==''}}" class='content3_view2'>
+        <view class='content3_view2_left'>
+          <text decode='true'>性&emsp;&emsp;格</text>
+        </view>
+        <view class='content3_view2_right'>{{info.chara}}</view>
+      </view>
+      <view wx:if='{{info.type==12||info.type==13}}'>
+        <view hidden="{{info.exp==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>经&emsp;&emsp;验</text>
+          </view>
+          <view class='content3_view2_right'>{{info.exp}}</view>
+        </view>
+      </view>
+      <view wx:if='{{info.type==14}}'>
+        <view hidden="{{info.resi==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>户&emsp;&emsp;口</text>
+          </view>
+          <view class='content3_view2_right'>{{info.resi}}</view>
+        </view>
+      </view>
+      <view wx:if='{{info.type==15}}'>
+        <view hidden="{{info.health==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>健&emsp;&emsp;康</text>
+          </view>
+          <view class='content3_view2_right'>{{info.health}}</view>
+        </view>
+      </view>
+
+      <view wx:if='{{info.type==16}}'>
+        <view hidden="{{info.edu==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>学&emsp;&emsp;历</text>
+          </view>
+          <view class='content3_view2_right'>{{info.edu}}</view>
+        </view>
+      </view>
+      <view wx:if='{{info.type==17}}'>
+        <view hidden="{{info.exp==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>经&emsp;&emsp;验</text>
+          </view>
+          <view class='content3_view2_right'>{{info.exp}}</view>
+        </view>
+      </view>
+      <view wx:if='{{info.type==18}}'>
+        <view hidden="{{info.exp==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>经&emsp;&emsp;验</text>
+          </view>
+          <view class='content3_view2_right'>{{info.exp}}</view>
+        </view>
+        <view hidden="{{info.height1==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>身&emsp;&emsp;高</text>
+          </view>
+          <view class='content3_view2_right'>{{info.height1}}cm~{{info.height2}}cm</view>
+        </view>
+      </view>
+      <view wx:if='{{info.type>18}}'>
+        <view hidden="{{info.exp==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>经&emsp;&emsp;验</text>
+          </view>
+          <view class='content3_view2_right'>{{info.exp}}</view>
+        </view>
+        <view hidden="{{info.height1==''}}"  class='content3_view2'>
+          <view class='content3_view2_left'>
+            <text decode='true'>身&emsp;&emsp;高</text>
+          </view>
+          <view class='content3_view2_right'>{{info.height1}}cm~{{info.height2}}cm</view>
+        </view>
+        <view wx:if='{{info.type==21}}'>
+          <view hidden="{{info.dvideo==''}}"  class='content3_view2'>
+            <view class='content3_view2_left'>
+              <text decode='true'>舞蹈视频</text>
+            </view>
+            <view class='content3_view2_right'>{{info.dvideo}}</view>
+          </view>
+        </view>
+        <view wx:else>
+          <view hidden="{{info.ivideo==''}}"  class='content3_view2'>
+            <view class='content3_view2_left'>
+              <text decode='true'>介绍视频</text>
+            </view>
+            <view class='content3_view2_right'>{{info.ivideo}}</view>
+          </view>
+          <view hidden="{{info.moka==''}}"  class='content3_view2'>
+            <view class='content3_view2_left'>
+              <text decode='true'>模&emsp;&emsp;卡</text>
+            </view>
+            <view class='content3_view2_right'>{{info.moka}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='content4'>
+    <view class='content4_view1'>其他要求</view>
+    <view  wx:if='{{info.other==0}}' class='content4_view2'>无</view>
+    <view wx:else class='content4_view2'>{{info.other}}</view>
+  </view>
+  <view class='content5'>
+    <form bindsubmit='apply' report-submit>
+      <button hidden='{{!jobhunter}}' class='content5_btn' form-type='submit'>申请职位</button>
+    </form>
+    <navigator url='../../user/employee/employee?id={{pid}}' hidden='{{hide}}'>
+      <form bindsubmit='see' report-submit>
+        <button hidden='{{jobhunter}}' class='content5_btn' form-type='submit'>查看求职者({{anum}})</button>
+      </form>
+    </navigator>
+  </view>
+</view>
+

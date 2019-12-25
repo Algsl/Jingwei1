@@ -1,0 +1,13 @@
+<view class='main'>
+  <view wx:for="{{list}}" wx:key="key">
+    <navigator url='../../see/detail/detail?id={{item.id}}'  class='item'>
+      <view  class="item_left">
+        <view class='item_left_top'>{{item.title}}</view>
+        <view class='item_left_bottom'>
+          <view>{{item.time}}发布</view>
+        </view>
+      </view>
+      <image class='item_right' src='{{item.simg}}'></image>
+    </navigator>
+  </view>
+</view>

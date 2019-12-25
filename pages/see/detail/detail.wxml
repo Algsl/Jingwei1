@@ -1,0 +1,13 @@
+<view class='main'>
+  <view class='title'>{{info.title}}</view>
+  <view class='time'>{{info.time}}发布</view>
+  <view class='content'>
+    <text decode='true'>{{info.content}}</text>
+  </view>
+  <image class='img' src='{{info.simg}}'></image>
+  <view class='content' wx:if='{{info.content1!=0}}'>
+    <text decode='true'>{{info.content1}}</text>
+  </view>
+  <image wx:if='{{info.simg1!=0}}' class='img' src='{{info.simg1}}'></image>
+</view>
+

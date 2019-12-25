@@ -1,0 +1,145 @@
+<view wx:if="{{hidden}}">
+    <loading>数据加载中....</loading>
+  </view>
+<view wx:else>
+  <view class='main'>
+    <view class='top_search'>
+      <view class='top_search_text'>大同</view>
+      <image class='top_search_downimg' src='../../images/down.png'></image>
+      <view class='top_search_view' bindtap='next'>
+        <image class='top_search_view_img' src='../../images/search.png'></image>
+        <view class='top_search_view_txt'>搜索</view>
+      </view>
+    </view>
+    <view class='content1'>
+      <view bindtap='iconchoose' wx:for="{{array3}}" wx:key="index"> 
+        <view class='content1_if' wx:if="{{index%5==0}}">
+          <navigator url='../index/all/all?id={{array3[index].id}}' class='content1_item'>
+            <view  data-hi="1" class='content1_item_view'>
+              <image  id="{{index}}" class='content1_item_img' src='{{array3[index].img}}'></image>
+            </view>
+            <view class='content1_item_txt'>{{array3[index].title}}</view>
+          </navigator>
+          <navigator url='../index/all/all?id={{array3[index+1].id}}' class='content1_item'>
+            <view class='content1_item_view'>
+              <image id="{{index+1}}"  class='content1_item_img' src='{{array3[index+1].img}}'></image>
+            </view>
+            <view class='content1_item_txt'>{{array3[index+1].title}}</view>
+          </navigator>
+          <navigator url='../index/all/all?id={{array3[index+2].id}}' class='content1_item'>
+            <view class='content1_item_view'>
+              <image id="{{index+2}}"  class='content1_item_img' src='{{array3[index+2].img}}'></image>
+            </view>
+            <view class='content1_item_txt'>{{array3[index+2].title}}</view>
+          </navigator>
+          <navigator url='../index/all/all?id={{array3[index+3].id}}' class='content1_item'>
+            <view class='content1_item_view'>
+              <image id="{{index+3}}"  class='content1_item_img' src='{{array3[index+3].img}}'></image>
+            </view>
+            <view class='content1_item_txt'>{{array3[index+3].title}}</view>
+          </navigator>
+          <view wx:if="{{array3[index+4].id==22}}">
+            <navigator url='../index/linkage/linkage' class='content1_item'>
+              <view class='content1_item_view'>
+                <image id="{{index+4}}"  class='content1_item_img' src='{{array3[index+4].img}}'></image>
+              </view>
+              <view class='content1_item_txt'>{{array3[index+4].title}}</view>
+            </navigator>
+          </view>
+          <view wx:else>
+            <navigator url='../index/all/all?id={{array3[index].id+4}}' class='content1_item'>
+              <view class='content1_item_view'>
+                <image id="{{index+4}}"  class='content1_item_img' src='{{array3[index+4].img}}'></image>
+              </view>
+              <view class='content1_item_txt'>{{array3[index+4].title}}</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true">
+      <view class='content2'>
+        <view class="content2_tab {{currentTab==0?'on':''}}" data-current="0" bindtap='swichNav'>综合排序</view>
+        <view class="content2_tab {{currentTab==1?'on':''}}" data-current="1" bindtap='swichNav'>价格排序</view>
+        <view class="content2_tab {{currentTab==2?'on':''}}" data-current="2" bindtap='swichNav'>筛选</view>
+      </view>
+      <modal hidden="{{!showModal}}" title="职位筛选" cancel-text="重置"  confirm-text="确定" bindconfirm="confirm" bindcancel="cancel" no-cancel="{{false}}" style='font-size:14px;color:#2B375E;'>
+        <scroll-view class='scroll_view' scroll-y="true" style='height:400rpx;color:black;'>
+          <view class='mitem'>
+            <view class='mitem_item'>
+              <image class='mitem_item_img' src='../../images/location1.png'></image>
+              <view class='mitem_item_txt'>地点</view>
+              <picker style='margin-left:2.7%;'  mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+              <view class="region">{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+            </picker>
+            </view>
+            <view style='width:100%;height:1px;background:#E1E2E6;'></view>
+
+            <view class='mitem_title'>类型</view>
+            <view  bindtap='choose' wx:for='{{array}}' wx:key="index">
+              <view class='mitem_item1' wx:if='{{index%3==0}}'>
+                <view class="bg {{typeid==index?'en':''}}" id='{{index}}'>{{array[index]}}</view>
+                <view class="bg {{typeid==index+1?'en':''}}" id='{{index+1}}' hidden='{{(index+1)>21}}'>{{array[index+1]}}</view>
+                <view class="bg {{typeid==index+2?'en':''}}" id='{{index+2}}' hidden='{{(index+2)>21}}'>{{array[index+2]}}</view>
+              </view>
+            </view>
+
+            <view class='mitem_title'>结算</view>
+            <view  bindtap='choose1' wx:for='{{array1}}' wx:key="index">
+              <view class='mitem_item1'  wx:if='{{index%3==0}}'>
+                <view class="bg {{typeid1==index?'en':''}}" id='{{index}}'>{{array1[index]}}</view>
+                <view class="bg {{typeid1==index+1?'en':''}}" id='{{index+1}}'>{{array1[index+1]}}</view>
+                <view class="bg {{typeid1==index+2?'en':''}}" id='{{index+2}}' hidden='{{(index+2)>4}}'>{{array1[index+2]}}</view>
+              </view>
+            </view>
+
+            <view class='mitem_title'>性别</view>
+            <view  bindtap='choose2'>
+              <view class='mitem_item1'>
+                <view class="bg {{typeid2==0?'en':''}}" id='{{0}}'>{{array2[0]}}</view>
+                <view class="bg {{typeid2==1?'en':''}}" id='{{1}}'>{{array2[1]}}</view>
+                <view class="bg {{typeid2==2?'en':''}}" id='{{2}}'>{{array2[2]}}</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </modal>
+      <view class='sv-item-y'>
+        <view wx:for="{{newImage0}}" wx:key="unique">
+          <template is="lists" data="{{...item}}"/>
+        </view>
+      </view>
+      <view class='over'>没有更多了</view>
+    </scroll-view>
+    <template name="lists">
+      <navigator hidden='{{need<=0}}' url='../index/detail/detail?id={{id}}' hover-class='navigator-hover'>
+        <view class='content3'>
+          <view class='content3_item'>
+            <view class='content3_item_1'>
+              <view class='content3_item_1_txt1'>{{title}}</view>
+              <view class='content3_item_1_txt2'>￥{{price}}</view>
+              <view class='split1'>/</view>
+              <view wx:if="{{ctype==0}}" class='content3_item_1_txt3'>天</view>
+              <view wx:elif="{{ctype==1}}" class='content3_item_1_txt3'>次</view>
+              <view wx:elif="{{ctype==2}}" class='content3_item_1_txt3'>小时</view>
+              <view wx:elif="{{ctype==3}}" class='content3_item_1_txt3'>周</view>
+              <view wx:elif="{{ctype==4}}" class='content3_item_1_txt3'>月</view>
+            </view>
+            <view class='content3_item_2'>
+              <image class='content3_item_2_img' src='../../images/location.png'></image>
+              <view class='content3_item_2_txt'>{{area}}</view>
+            </view>
+            <view class='content3_item_3'>
+              <view class='content3_item_3_txt1'>所需{{need}}人</view>
+              <view class='split'>/</view>
+              <view class='content3_item_3_txt2'>性别 {{sex==0?'不限':sex==1?'男':'女'}}</view>
+              <view class='split'>/</view>
+              <view class='content3_item_3_txt3'>{{hot}}次浏览</view>
+              <view class='content3_item_3_txt4'>{{time}}</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </template>
+  </view>
+</view>

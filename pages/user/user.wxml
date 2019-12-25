@@ -1,0 +1,333 @@
+    <!--<image animation="{{animationData0}}"  src='../../../images/role.png' style='width:100rpx;height:100rpx;margin-top:200rpx;'></image>
+      <view  animation="{{animationData1}}" style='width:30rpx;height:30rpx;border-radius:50%;background-color:red;margin-left:100rpx;margin-top:220rpx;'></view>-->
+<!--<view wx:if="{{hidden}}">
+    <loading>数据加载中....</loading>
+  </view>
+<view wx:else>-->
+
+<view class="main" style='height:{{sHeight}}px;'>
+  <view wx:if="{{noReg}}" class='choose'>
+    <button  wx:if='{{userInfo.nickName==null}}' class='help' open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text decode='true'>请&emsp;授&emsp;权</text></button>
+    <block wx:else>
+      <view class='head'>
+          <view class='top'>
+            <image class="top_left" src='{{userInfo.avatarUrl}}'></image>
+            <view class='top_right'>
+              <view class='top_right_top'>{{userInfo.nickName}}</view>
+              <view class='top_right_bottom'>欢迎使用精卫看世界</view>
+            </view>
+          </view>
+      </view>
+      <view class='ccontent1'>
+        <view class='ccontent1_item1'>身份选择</view>
+        <view class='ccontent1_item2'>
+          <view class='ccontent1_item2_view'>
+            <image class='ccontent1_item2_view_top' src='../../images/jobhunter.png' bindtap='jobhunter'></image>
+            <view class='ccontent1_item2_view_bottom'>学生</view>
+          </view>
+          <view class='ccontent1_item2_view1'>
+            <image class='ccontent1_item2_view_top' src='../../images/merchant.png' bindtap='merchant'></image>
+            <view class='ccontent1_item2_view_bottom'>商家</view>
+          </view>
+        </view>
+      </view> 
+      <view class='ccontent2'>
+        <view class='ccontent2_item1'>寄语</view>
+        <view class='ccontent2_item2'>
+          <text decode='true'>&emsp;&emsp;只有启程，才会到达理想的目的地；只有拼搏，才会收获辉煌的成功；只有播种，才能有收获；只有奋斗，才能品味幸福的人生。</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:elif="{{jobhunter}}">
+    <modal hidden="{{!showModal}}" title="等级制度" confirm-text="我知道了" bindconfirm="confirm" no-cancel="{{true}}">
+      <scroll-view scroll-y="true" style='height:400rpx;color:black;'>
+        <view class='mitem'>
+          <view class='mitem_left'>1.</view>
+          <view class='mitem_right'>共分为5个等级：新秀、大侠、掌门、宗师、盟主</view>
+        </view>
+        <view class='mitem'>
+          <view class='mitem_left'>2.</view>
+          <view class='mitem_right'>当等级达到3级(掌门级别)开启奖励金模式</view>
+        </view>
+        <view class='mitem'>
+          <view class='mitem_left'>3.</view>
+          <view class='mitem_right'>月底单数超过18单,奖励金为200元;单数超过10单,奖励金为100元;单数超过5单,奖励金为30元</view>
+        </view>
+        <view class='mitem' style='color:red;'>
+          <view class='mitem_left'>注：</view>
+          <view class='mitem_right'>每月的最后一天单数清零,计算该月的奖励金额</view>
+        </view>
+      </scroll-view>
+    </modal>
+    <view class='jobhunter'>
+      <!--<view class='top'>
+        <view class='tophead'>
+          <view class='topheadleft'>
+            <image class='topheadimg' src='{{userInfo.avatarUrl}}'></image>
+          </view>
+          <view class='topheadright'>
+            <view class='topheadname'>Hi,{{userInfo.nickName}}</view>
+            <view class='topheadlevel' wx:if='{{!noC}}'>
+              <view class='topheadlevelprogress'>
+                <progress percent='{{Juser.exp*100/Juser.aexp}}'></progress>
+              </view>
+              <view class='topheadlevelexp'>{{Juser.exp}}/{{Juser.aexp}}</view>
+            </view>
+            <view wx:else>
+              欢迎关注精卫看世界
+            </view>
+          </view>   
+        </view>
+        <view class='topbottom'>
+          <view class='topbottomleft'>
+            <image class='topbottomimg' src='../../images/role.png'></image>
+            <view class='topbottomtxt' wx:if='{{!noC}}'>
+              <view class='topbottomtxttop'>LV{{Juser.level}}.{{Juser.lname}}</view>
+              <view class='topbottomtxtbottom' bindtap='level'>查看等级制度</view>
+            </view>
+            <view class='topbottomtxt' wx:else>
+              <view class='topbottomtxttop'>等级</view>
+              <view class='topbottomtxtbottom'>未知</view>
+            </view>
+          </view>
+          <view class='topbottomright'>
+            <image class='topbottomimg' src='../../images/money.png'></image>
+            <view wx:if='{{!noC}}' class='topbottomtxt'>
+              <view class='topbottomtxttop'>{{Juser.money}}元</view>
+              <view class='topbottomtxtbottom'  bindtap='money'>提现</view>
+            </view>
+            <view class='topbottomtxt' wx:else>
+              <view class='topbottomtxttop'>奖励金</view>
+              <view class='topbottomtxtbottom'>未知</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='applyrecord'>
+        <view class='applyrecordtop'>申请记录</view>
+        <view class='applyrecordbottom'>
+          <navigator url='../user/order/order?id=0' class='applyrecorditem1'>
+            <view class='applyrecorditemi1' hidden='{{j1==0}}'>{{j1}}</view>
+            <image class='applyrecorditemimg1' src='../../images/apply.png'></image>
+            <view class='applyrecorditemtxt'>已申请</view>
+          </navigator>
+          <navigator url='../user/order/order?id=1' class='applyrecorditem1'>
+            <view class='applyrecorditemi2' hidden='{{j2==0}}'>{{j2}}</view>
+            <image class='applyrecorditemimg1' src='../../images/working.png'></image>
+            <view class='applyrecorditemtxt'>工作中</view>
+          </navigator>
+          <navigator url='../user/order/order?id=2' class='applyrecorditem1'>
+            <view class='applyrecorditemi3' hidden='{{j3==0}}'>{{j3}}</view>
+            <image class='applyrecorditemimg1' src='../../images/finish.png'></image>
+            <view class='applyrecorditemtxt'>已完成</view>
+          </navigator>
+        </view>
+      </view>
+      <view class='other'>
+        <view class='otheritem' bindtap='Jform'   wx:if="{{noC}}">
+          <view class='otheritemtxt'>信息完善</view>
+        </view>
+        <navigator url='../user/Jform/Jform?id={{id}}' wx:else>
+          <view class='otheritem'>
+            <view class='otheritemtxt'>修改信息</view>
+            <view class='otheritemtxt' hidden='{{audit}}' style='color:red;'>(审核失败)</view>          
+          </view>
+        </navigator>
+        <navigator url='../user/resume/resume'>
+          <view class='otheritem'>
+            <view class='otheritemtxt'>个人简历</view>
+          </view>
+        </navigator>
+        <navigator url='../user/chat/chat' hidden='{{chat}}'>
+          <view class='otheritem'>
+            <view class='otheritemtxt'>闲聊讨论</view>
+          </view>
+        </navigator>
+        <view class='otheritem'>
+          <view class='otheritemtxt' bindtap='help'>求助反馈</view>
+        </view>
+        <navigator url='../user/about/about'>
+          <view class='otheritem'>
+            <view class='otheritemtxt'>关于我们</view>
+          </view>
+        </navigator> 
+      </view>
+      <view class='error'>
+        <view class='error_item1'>
+          <text>误选身份？</text>
+          <text style='color:#999999;' bindtap='ireset'>身份重置</text>
+        </view>
+        <view  class='error_item2'>身份重置需手动切换到其他界面再切换回来进行刷新</view>
+      </view>-->
+      <button  wx:if='{{userInfo.nickName==null}}' class='help' open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text decode='true'>请&emsp;授&emsp;权</text></button>
+      <block wx:else>
+      <view class='user_main'>
+        <view class='top'>
+          <image class="top_left" src='{{userInfo.avatarUrl}}'></image>
+          <view class='top_right'>
+            <view class='top_right_top'>{{userInfo.nickName}}</view>
+            <view class='top_right_bottom'>欢迎使用精卫看世界</view>
+          </view>
+        </view>
+        <view class='content1'>
+          <view class='content1_item'>
+              <image class='content1_item_levelimg' src='../../images/vip.png'></image>
+              <view class='content1_item_levelhint'  bindtap='level'>等级</view>
+              <view class='content1_item_levelname'>{{Juser.lname}}</view>
+          </view>
+          <view class='content1_item_line'></view>
+          <view class='content1_item'>
+              <image class='content1_item_moneyimg' src='../../images/money.png'></image>
+              <view class='content1_item_moneyhint'  bindtap='money'>奖励金</view>
+              <view class='content1_item_moneyname'>{{Juser.money}}</view>
+          </view>
+        </view>
+        <view class='content2'>
+          <view class='content2_text'>申请记录</view>
+          <view class='content2_line'></view> 
+          <view class='content2_bottom'>
+            <navigator url='../user/order/order?id=0'  class='content2_bottom_item'>
+              <image class='content2_bottom_img' src='../../images/apply.png'></image>
+              <view class='content2_bottom_text'>已申请({{j1}})</view>
+            </navigator>
+            <navigator url='../user/order/order?id=1' class='content2_bottom_item'>
+              <image class='content2_bottom_img' src='../../images/work.png'></image>
+              <view class='content2_bottom_text'>工作中({{j2}})</view>
+            </navigator>
+            <navigator url='../user/order/order?id=2'  class='content2_bottom_item'>
+              <image class='content2_bottom_img' src='../../images/finish.png'></image>
+              <view class='content2_bottom_text'>已完成({{j3}})</view>
+            </navigator>
+          </view> 
+        </view>
+        <view class='content3'>
+          <view class='content3_item'>
+            <view class='content3_item_1' bindtap='Jform'>
+              <text class='content3_item_1_text'>信息完善</text>
+            </view>
+            <view class='content3_item_line_column'></view>
+            <navigator url='../user/resume/resume'  class='content3_item_1'>
+                <text class='content3_item_1_text'>个人简历</text>
+            </navigator>
+          </view>
+          <view class='content3_item_line_row'></view>
+          <view class='content3_item'>
+            <view class='content3_item_1'  bindtap='chat'>
+              <text class='content3_item_1_text' >综合交流</text>
+            </view>
+            <view class='content3_item_line_column'></view>
+            <navigator url='../user/about/about'  class='content3_item_1'>
+              <text class='content3_item_1_text'>关于我们</text>
+            </navigator>
+          </view>
+        </view>
+        <view class='content4'>
+          <view class='content4_hint'>误选身份？</view>
+          <view class='content4_btn'  bindtap='ireset'>
+            <text class='content4_btn_text'>身份重置</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    </view>
+  </view>
+  <view wx:else>
+    <view hidden='{{hide}}'>
+      <button  wx:if='{{userInfo.nickName==null}}' class='help' open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text decode='true'>请&emsp;授&emsp;权</text></button>
+      <block wx:else>
+        <form bindsubmit='formSubmit'>
+          <!--<view class='login'>
+            <view class='login_code'>账号：
+              <input class='login_cp_input' name="code" placeholder='请输入账号'></input>
+            </view>
+            <view class='login_pwd'>密码：
+              <input type="password" class='login_cp_input' name="pwd" placeholder='请输入密码'></input>
+            </view>
+            <view class='login_pwd' hidden='{{hide2}}'>提示：
+              <view class='login_cp_input' wx:if="{{hint==null}}">请先输入账号</view>
+              <view class='login_cp_input' wx:else>{{hint}}</view>
+            </view>
+            <button plain='true' class='login_btn' form-type='submit'>登录</button>
+            <view class='login_bottom'>
+              <view class='login_bottom_top'>
+                <view class='login_bottom_item' bindtap='register'>注册</view>
+                <view class='login_bottom_item' bindtap='ireset'>身份重置</view>
+                <view class='login_bottom_item' bindtap='help'>求助反馈</view>
+              </view>
+              <view  class='login_bottom_bottom'>身份重置需手动切换到其他界面再切换回来进行刷新</view>
+            </view>
+          </view>-->
+          <view class='login'>
+            <input class='login_input1' placeholder='账号' name="code" placeholder-style='color:#C6C8D1;'></input>
+            <input class='login_input2' placeholder='密码' name="pwd" type='password' placeholder-style='color:#C6C8D1;'></input>
+            <button class='login_btn' form-type='submit'>登录</button>
+            <view class='login_reg' bindtap='register'>快速注册</view>
+            <view class='login_bottom'>
+              <view class='login_left' bindtap='ireset'>
+              身份重置<text style='font-size:20rpx;color:red'></text>
+              </view>
+              <view class='login_right' bindtap='retripwd'>找回密码</view>
+            </view>
+          </view>
+        </form>
+      </block>
+    </view>
+    <view hidden='{{hide1}}'>
+      <view class='user_main'>
+        <view class='top'>
+          <image class="top_left" src='{{userInfo.avatarUrl}}'></image>
+          <view class='top_right'>
+            <view class='top_right_top'>{{userInfo.nickName}}</view>
+            <view class='top_right_bottom'>欢迎使用精卫看世界</view>
+          </view>
+        </view>
+        <view class='content2'>
+          <view class='content2_text'>发布记录</view>
+          <view class='content2_line'></view> 
+          <view class='content2_bottom'>
+            <!--<navigator url='../user/order1/order1?id=0' class='content2_bottom_item1'>
+              <image class='content2_bottom_img1' src='../../images/apply.png'></image>
+              <view class='content2_bottom_text'>已提交({{m1}})</view>
+            </navigator>-->
+            <navigator url='../user/order1/order1?id=1'  class='content2_bottom_item'>
+              <image class='content2_bottom_img' src='../../images/work.png'></image>
+              <view class='content2_bottom_text'>已发布({{m2}})</view>
+            </navigator>
+            <navigator url='../user/order1/order1?id=2'  class='content2_bottom_item'>
+              <image class='content2_bottom_img' src='../../images/pay.png'></image>
+              <view class='content2_bottom_text'>待支付({{m3}})</view>
+            </navigator>
+            <navigator url='../user/order1/order1?id=3'  class='content2_bottom_item'>
+              <image class='content2_bottom_img' src='../../images/finish.png'></image>
+              <view class='content2_bottom_text'>已完成({{m4}})</view>
+            </navigator>
+          </view> 
+        </view>
+        <view class='content3'>
+          <view class='content3_item'>
+            <view class='content3_item_1' bindtap='mform'>
+              <text class='content3_item_1_text'>信息完善</text>
+            </view>
+            <view class='content3_item_line_column'></view>
+            <view class='content3_item_1'  bindtap='issue'>
+              <text class='content3_item_1_text'>发布信息</text>
+            </view>
+          </view>
+          <view class='content3_item_line_row'></view>
+          <view class='content3_item'>
+            <navigator url='../user/chat/chat'  class='content3_item_1'>
+              <text class='content3_item_1_text'>综合交流</text>
+            </navigator>
+            <view class='content3_item_line_column'></view>
+            <navigator url='../user/about/about'  class='content3_item_1'>
+              <text class='content3_item_1_text'>关于我们</text>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<navigator url='../user/help/help' class='float_btn'>求助反馈</navigator>
+<!--</view>-->

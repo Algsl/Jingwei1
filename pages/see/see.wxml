@@ -1,0 +1,66 @@
+<view wx:if="{{hidden}}">
+  <loading>数据加载中....</loading>
+</view>
+<view wx:else>
+
+  <scroll-view scroll-y style='height:1280rpx;' class='main'>
+    <swiper  class='top' indicator-dots='true' duration='1000' interval='3000' autoplay='true'>
+      <view wx:for='{{imgList}}' wx:key="key">
+        <swiper-item class='top_swiper'>
+          <image class='top_img' src='{{item.img}}' bindtap='findJob'></image>
+        </swiper-item>
+      </view>
+    </swiper>
+    <navigator class='bar' url='../see/more/more?id=1'>
+      <view class='bar_title'>娱乐</view>
+      <view class='bar_more'>查看更多</view>
+      <image class='bar_img' src='../../images/more.png'></image>
+    </navigator>
+    <view wx:for="{{recreation}}" wx:key="key">
+      <navigator url='../see/detail/detail?id={{item.id}}'  class='item'>
+        <view  class="item_left">
+          <view class='item_left_top'>{{item.title}}</view>
+          <view class='item_left_bottom'>
+            <view>{{item.time}}发布</view>
+          </view>
+        </view>
+        <image class='item_right' src='{{item.simg}}'></image>
+      </navigator>
+    </view>
+
+    <navigator class='bar' url='../see/more/more?id=2'>
+      <view class='bar_title'>时尚</view>
+      <view class='bar_more'>查看更多</view>
+      <image class='bar_img' src='../../images/more.png'></image>
+    </navigator>
+    <view wx:for="{{fashion}}" wx:key="key">
+      <navigator url='../see/detail/detail?id={{item.id}}'  class='item'>
+        <view  class="item_left">
+          <view class='item_left_top'>{{item.title}}</view>
+          <view class='item_left_bottom'>
+            <view>{{item.time}}发布</view>
+          </view>
+        </view>
+        <image class='item_right' src='{{item.simg}}'></image>
+      </navigator>
+    </view>
+
+    <navigator class='bar' url='../see/more/more?id=3'>
+      <view class='bar_title'>励志</view>
+      <view class='bar_more'>查看更多</view>
+      <image class='bar_img' src='../../images/more.png'></image>
+    </navigator>
+    <view wx:for="{{motivation}}" wx:key="key">
+      <navigator url='../see/detail/detail?id={{item.id}}'  class='item'>
+        <view  class="item_left">
+          <view class='item_left_top'>{{item.title}}</view>
+          <view class='item_left_bottom'>
+            <view>{{item.time}}发布</view>
+          </view>
+        </view>
+        <image class='item_right' src='{{item.simg}}'></image>
+      </navigator>
+    </view>
+  </scroll-view>
+</view>
+<!--<navigator url='../user/help/help' class='float_btn'>求助反馈</navigator>-->

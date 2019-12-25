@@ -1,0 +1,34 @@
+.main{
+  width: 100%;
+  height: 100%;
+}
+.title{
+  width: 100%;
+  height: 44rpx;
+  margin-left: 5.3%;
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  color: #202437;
+}
+.time{
+  width: 100%;
+  height: 34rpx;
+  margin-left: 5.3%;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #797E8B;
+}
+.content{
+  width: 89.3%;
+  margin-left: 5.3%;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  color: #202437;
+}
+.img{
+  width: 89.3%;
+  height: 306rpx;
+  margin-left: 5.3%;
+  margin-top: 30rpx;
+}

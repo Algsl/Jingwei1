@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/see/see",
+    "pages/see/detail/detail",
+    "pages/see/more/more",
+    "pages/index/index",
+    "pages/index/search/search",
+    "pages/index/detail/detail",
+    "pages/user/user",
+    "pages/honor/honor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/see/see",
+        "text": "精卫看",
+        "iconPath": "images/see_off.png",
+        "selectedIconPath": "images/see_on.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "找服务",
+        "iconPath": "images/service_off.png",
+        "selectedIconPath": "images/service_on.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/me_off.png",
+        "selectedIconPath": "images/me_on.png"
+      }
+    ]
+  },
+  "style": "v2"
+}
