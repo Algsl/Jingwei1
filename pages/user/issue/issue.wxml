@@ -1,0 +1,196 @@
+<view class='main'>
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit>
+    <image hidden='{{img!=null}}' src='../../../images/add.png' style='width:96.8rpx;height:96.8rpx;position:absolute;top:62rpx;left:616rpx;'></image>
+    <scroll-view scroll-y="true" style='height:{{winHeight-50}}px;'>
+      <view class='content1'>
+        <view class='content1_left'>
+          <view class='content1_left_top'>
+            <view class='content1_left_top_txt'>职位标题</view>
+            <image src='../../../images/edit.png' style='width:32rpx;height:32rpx;' class='content1_left_top_img'></image>
+          </view>
+          <view class='content1_left_bottom'>
+            <input class='content2_bottom' placeholder='请输入职位标题' placeholder-style='font-size:14px;color:#C6C8D1' name="title" value='{{savemsg.title}}'></input>
+          </view>
+        </view>
+        <image class='content1_right' name="img" catchtap="chooseImageTap" src='{{img}}'></image>
+      </view>
+      <view class='content2'>
+        <view class='content2_left'><text decode='true'>价&emsp;&emsp;格</text></view>
+        <view class='content2_right'>
+          <input  type='number' class='content2_right_input'  name="price"  value='{{savemsg.price}}' placeholder='??'></input>
+          <picker style='width:80rpx;' bindchange='pchange0' value='{{index0}}' range='{{array0}}'>
+          <view>/{{array0[index0]}}</view>
+          </picker>
+          <image src='../../../images/more.png' class='content2_right_img'></image>
+        </view>
+      </view>
+      <view class='content2'>
+        <view class='content2_left'><text decode='true'>人&emsp;&emsp;数</text></view>
+        <view class='content2_right'>
+          <input class='content2_right_input1'  type='number' placeholder='??' name="need"   value='{{savemsg.need}}'></input>
+          <view>人</view>
+        </view>
+      </view>
+      <view class='content2'>
+        <view class='content2_left'>工作天数</view>
+        <view class='content2_right'>
+          <input class='content2_right_input1'  type='number'  placeholder='??' name="day"  value='{{savemsg.day}}'></input>
+          <view>天</view>
+        </view>
+      </view>
+      <view class='content2'>
+        <view class='content2_left'>年龄要求</view>
+        <view class='content2_right1'>
+          <input type='number' class='content2_right1_input' placeholder='??' name="age1"  value='{{savemsg.age1}}'></input>
+          <view class='content3_right_split'></view>
+          <input type='number' class='content2_right1_input' placeholder='??' name="age2"  value='{{savemsg.age2}}'></input>
+          <view class='content3_right_txt'>岁</view>
+        </view>
+      </view>
+
+      <view class='content5'>
+        <view class='content5_top'>工作地点</view>
+        <input class='content5_bottom' name="area" placeholder='至少5个字符'  value='{{savemsg.area}}'></input>
+      </view>
+      <view class='content5'>
+        <view class='content5_top'>福利待遇</view>
+        <input class='content5_bottom' placeholder='未填写' name="welfare"  value='{{savemsg.welfare}}'></input>
+      </view>
+      <view class='content2'>
+        <view class='content2_left'>工作日期</view>
+        <view class='content2_right'>
+          <picker name='wtime1' mode="date" fields="day" end="2020-12-31" bindchange='datechange1'><view>{{wtime1}}起</view>
+          </picker>
+        </view>
+      </view>
+      <view class='content3'>
+        <view class='content3_left'>工作时间</view>
+        <view class='content3_right'>
+          <view class='content3_right_top'>
+            <picker class='content3_right_input' id="0" mode="time" value="{{t1}}" bindchange="bindTimeChange1">
+              {{t1}}
+            </picker>
+            <view class='content3_right_split'></view>
+            <picker class='content3_right_input' id="1" mode="time" value="{{t2}}" bindchange="bindTimeChange2">{{t2}}</picker>
+            <view class='content3_right_txt'>上午</view>
+          </view>
+          <view class='content3_right_bottom'>
+            <picker class='content3_right_input' id="2" mode="time" value="{{t3}}" bindchange="bindTimeChange3">{{t3}}</picker>
+            <view class='content3_right_split'></view>
+            <picker class='content3_right_input' id="3" mode="time" value="{{t4}}" bindchange="bindTimeChange4">{{t4}}</picker>
+            <view class='content3_right_txt'>下午</view>
+          </view>
+        </view>
+      </view>
+      <view class='content4'>
+        <view class='content4_left'><text decode='true'>性&emsp;&emsp;别</text></view>
+        <radio-group  class='content4_right'  name="sex">
+          <radio class='content4_right_item' value='0' checked="{{savemsg.sex==null ||savemsg.sex=='0'}}">不限</radio>
+          <radio class='content4_right_item' value='1' checked='{{savemsg.sex==1}}'>男</radio>
+          <radio class='content4_right_item' value='2'  checked='{{savemsg.sex==2}}'>女</radio>
+        </radio-group>
+      </view>
+      <view class='content2'>
+        <view class='content2_left'>类型选择</view>
+        <view class='content2_right'>
+          <picker style='width:200rpx;' bindchange='pchange' value='{{index}}' range='{{array}}'><view>{{array[index]}}</view>
+            </picker>
+          <image src='../../../images/more.png' class='content2_right_img'></image>
+        </view>
+      </view>
+      <view wx:if='{{index>=2 && index<=18}}'>
+        <view class='content5'>
+          <view class='content5_top'>性格要求</view>
+          <input class='content5_bottom' name="chara" placeholder='未填写'  value='工作认真，积极负责'></input>
+        </view>
+          <view wx:if='{{index==12 || index==13}}'>
+            <view class='content5'>
+              <view class='content5_top'>教学经验</view>
+              <input class='content5_bottom'name="exp" placeholder='未填写'  value='{{savemsg.exp}}'></input>
+            </view>
+          </view>
+          <view wx:if='{{index==14}}'>
+            <view class='content5'>
+              <view class='content5_top'><text decode='true'>户&emsp;&emsp;口：</text></view>
+              <input class='content5_bottom' name="resi" placeholder='未填写'  value='{{savemsg.resi}}'></input>
+            </view>
+          </view>
+          <view wx:if='{{index==15}}'>
+            <view class='content5'>
+              <view class='content5_top'>健康要求</view>
+              <input class='content5_bottom' name="health" placeholder='未填写'  value='{{savemsg.health}}'></input>
+            </view>
+          </view>
+          <view wx:if='{{index==16}}'>
+            <view class='content5'>
+              <view class='content5_top'>学历要求</view>
+              <input class='content5_bottom' name="edu" placeholder='未填写'  value='{{savemsg.edu}}'></input>
+            </view>
+          </view>
+          <view wx:if='{{index==17}}'>
+            <view class='content5'>
+              <view class='content5_top'>经验要求</view>
+              <input class='content5_bottom' name="exp" placeholder='未填写'  value='{{savemsg.exp}}'></input>
+            </view>
+          </view>
+          <view wx:if='{{index==18}}'>
+            <view class='content5'>
+              <view class='content5_top'>经验要求</view>
+              <input class='content5_bottom' name="exp" placeholder='未填写'  value='{{savemsg.exp}}'></input>
+            </view>
+            <view class='content2'>
+              <view class='content2_left'>身高要求</view>
+              <view class='content2_right1'>
+                <input type='number' class='content2_right1_input' placeholder='??' name="height1"  value='{{savemsg.height1}}'></input>
+                <view class='content3_right_split'></view>
+                <input type='number' class='content2_right1_input' placeholder='??' name="height2"  value='{{savemsg.height2}}'></input>
+                <view class='content3_right_txt'>cm</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:if='{{index>18}}'>
+          <view class='content5'>
+            <view class='content5_top'>经验要求</view>
+            <input class='content5_bottom' name="exp" placeholder='未填写'  value='{{savemsg.exp}}'></input>
+          </view>
+          <view class='content2'>
+            <view class='content2_left'>身高要求</view>
+            <view class='content2_right1'>
+              <input type='number' class='content2_right1_input' placeholder='??' name="height1"  value='{{savemsg.height1}}'></input>
+              <view class='content3_right_split'></view>
+              <input type='number' class='content2_right1_input' placeholder='??' name="height2"  value='{{savemsg.height2}}'></input>
+              <view class='content3_right_txt'>cm</view>
+            </view>
+          </view>
+          <view wx:if='{{index==21}}'>
+            <view class='content5'>
+              <view class='content5_top'>舞蹈视频</view>
+              <input class='content5_bottom' name="dvideo" placeholder='未填写'  value='{{savemsg.devideo}}'></input>
+            </view>
+          </view>
+          <view wx:else>
+            <view class='content5'>
+              <view class='content5_top'>介绍视频</view>
+              <input class='content5_bottom' name="ivideo" placeholder='未填写'  value='{{savemsg.ivideo}}'></input>
+            </view>
+            <view class='content5'>
+              <view class='content5_top'><text decode='true'>模&emsp;&emsp;卡：</text></view>
+              <input class='content5_bottom' name="moka" placeholder='未填写'  value='{{savemsg.moka}}'></input>
+            </view>
+          </view>
+        </view>
+        <view class='content5'>
+          <view class='content5_top'>其他要求</view>
+          <input class='content5_bottom' placeholder='未填写' name="other"  value='{{savemsg.other}}'></input>
+        </view>
+    </scroll-view>
+    <view wx:if="{{template!=null && template!=0}}"  class='content6'>
+      <button class='content6_left' bindtap='useModel'>使用模板</button>
+      <button class='content6_right' form-type='submit'><text decode='true'>发&emsp;布</text></button>
+    </view>
+    <view wx:else  class='content6'>
+      <button class='content6_btn' form-type='submit'><text decode='true'>发&emsp;布</text></button>
+    </view>
+  </form>
+</view>

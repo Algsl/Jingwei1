@@ -1,0 +1,90 @@
+.main{
+  width: 100%;
+  height: 100%;
+}
+.top_bar{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: #FAEFC0;
+}
+.bottom{
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  bottom: 0rpx;
+  display: flex;
+  flex-direction: row;
+  border-top: 1rpx solid #F6F7FB;
+  background: rgba(255,255,255,0.90);
+  box-shadow: inset 0 0 0 0 #C6C8D1;
+}
+.bottom_input{
+  width: 540rpx;
+  height: 60rpx;
+  margin-left: 40rpx;
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #A9B1D2;
+  border-radius: 8rpx;
+  background:#F6F7FB;
+}
+.bottom_btn{
+  height: 60rpx;
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  text-align: center;
+  background: #1EC996;
+}
+.item1{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 150rpx;
+}
+.img{
+  width: 120rpx;
+  height: 120rpx;
+  margin-top:15rpx;
+  margin-left: 20rpx;
+  border-radius: 50%;
+}
+.content{
+  width:75%;
+  height: 125rpx;
+  margin-top: 15rpx;
+  margin-left: 10rpx;
+  background:url('https://haijiao.pw/img/talkl.png');
+  background-size: 100%;
+}
+.content_msg{
+  margin-top: 10rpx;
+  margin-left: 70rpx;
+  width: 450rpx;
+  line-height: 60rpx;
+  height: 120rpx;
+}
+.content1{
+  width:75%;
+  height: 125rpx;
+  margin-top: 15rpx;
+  margin-left: 10rpx;
+  background:url('https://haijiao.pw/img/talkr.png');
+  background-size: 100%;
+}
+.content_msg1{
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  line-height: 40rpx;
+  width: 450rpx;
+  height: 120rpx;
+}
+::-webkit-scrollbar{
+  width: 0rpx;
+  height: 0rpx;
+  background-color:transparent;
+}

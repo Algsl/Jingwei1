@@ -1,0 +1,29 @@
+<form bindsubmit='regForm' class='main'>
+  <view class='txt'>欢迎使用精卫看世界</view>
+  <view class='content'>
+    <image class='content_img' src='../../../images/username.png'></image>
+    <input class='content_input' placeholder='用户名（6-32位英文字符）' name="code" placeholder-style='font-size:28rpx;color:#C6C8D1'></input>
+  </view>
+  <view class='content'>
+    <image class='content_img' src='../../../images/password.png'></image>
+    <input class='content_input' placeholder='密码（必须包含数字、英文）' type='password' name="pwd" placeholder-style='font-size:28rpx;color:#C6C8D1'></input>
+  </view>
+  <view class='content'>
+    <image class='content_img' src='../../../images/password.png'></image>
+    <input class='content_input' placeholder='确认密码' type='password' name="rpwd" placeholder-style='font-size:28rpx;color:#C6C8D1'></input>
+  </view>
+  <form bindsubmit="phoneForm" bindreset="formReset" report-submit>
+    <view class='content'>
+      <image class='content_img' src='../../../images/phone.png'></image>
+      <input class='content_input1' type='number' name="mobile" placeholder='手机号' placeholder-style='font-size:28rpx;color:#C6C8D1' value='{{mobile}}'></input>
+      <button class='content_btn' style="width:200rpx;height:30rpx;" open-type='getPhoneNumber' bindgetphonenumber='getPhone'>本机号码</button>
+    </view>
+    <view class='content' hidden>
+      <image class='content_img' src='../../../images/verification.png'></image>
+      <input class='content_input1' type='number' name="" placeholder='验证码' placeholder-style='font-size:28rpx;color:#C6C8D1'></input>
+      <button class='content_btn' form-type='submit' disabled='{{disabled}}'>{{time}}</button>
+    </view>
+  </form>
+  <button class='btn' form-type='submit'>立即注册</button>
+</form>
+

@@ -1,0 +1,128 @@
+.main{
+  width: 100%;
+  height: 100%;
+}
+.head{
+  height: 80rpx;
+  text-align: center;
+  line-height: 82rpx;
+  border-bottom: 1rpx solid black;
+}
+.logo{
+  position:fixed;
+  align-items: center;
+  background-size: 100%;
+}
+/*垂直方向上的布局*/
+.sv_y{
+  width:100%;
+  height:950rpx;
+  white-space: nowrap;
+}
+/*设置滚动条不显示*/
+::-webkit-scrollbar{
+  width:0rpx;
+  height:0rpx;
+  color:transparent;
+}
+/*swiper控件的宽高*/
+.swiper-tab{
+  width:100%;
+  border-bottom:2rpx solid #eeeeee;
+  text-align: center;
+  line-height: 80rpx;
+  background-color:#5DAE85;
+}
+/*垂直方向上的子布局*/
+.gv{
+  background-color:white;
+  display:flex;
+  flex-direction: row;
+  height:220rpx;
+  border-bottom:1px solid grey;
+}
+/*横向内部：图片，内容，价格*/
+.gv_img{
+  width:160rpx;
+  height:160rpx;
+  margin-top:20rpx;
+  border-radius: 50%;
+}
+.item{
+  width: 80%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin: 5rpx;
+  margin-left: 10rpx;
+}
+.gv_t{
+  width: 300rpx;
+  color:black;
+  font-size:40rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.gv_p{
+  color:red;
+  font-size: 40rpx;
+  margin-left: 40rpx;
+}
+.txt0{
+  display: flex;
+  flex-direction: row;
+}
+.txt{
+  display: flex;
+  flex-direction: row;
+  padding-top: 5rpx;
+}
+.txt1{
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.area{
+  padding-top:10rpx;
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+  color:blue;
+}
+.s_img{
+  display: flex;
+  align-items: center;
+  width:50rpx;
+  height:50rpx;
+  padding-right: 5rpx;
+}
+.form{
+  margin:20rpx;
+  height: 400rpx;
+  background-color:azure;
+}
+.f_img{
+  margin-left: 43%;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.payfor{
+  text-align: center;
+}
+.money{
+  display: flex;
+  flex-direction: row;
+  font-size: 60rpx;
+}
+.input{
+  padding-top:10rpx;
+  width: 80%;
+  height: 60rpx;
+}
+.btn{
+  margin-top:10rpx;
+  line-height: 80rpx;
+  width: 80%;
+  height: 80rpx;
+}

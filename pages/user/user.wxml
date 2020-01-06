@@ -5,7 +5,7 @@
   </view>
 <view wx:else>-->
 
-<view class="main" style='height:{{sHeight}}px;'>
+<view class="main">
   <view wx:if="{{noReg}}" class='choose'>
     <button  wx:if='{{userInfo.nickName==null}}' class='help' open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text decode='true'>请&emsp;授&emsp;权</text></button>
     <block wx:else>
@@ -61,105 +61,6 @@
       </scroll-view>
     </modal>
     <view class='jobhunter'>
-      <!--<view class='top'>
-        <view class='tophead'>
-          <view class='topheadleft'>
-            <image class='topheadimg' src='{{userInfo.avatarUrl}}'></image>
-          </view>
-          <view class='topheadright'>
-            <view class='topheadname'>Hi,{{userInfo.nickName}}</view>
-            <view class='topheadlevel' wx:if='{{!noC}}'>
-              <view class='topheadlevelprogress'>
-                <progress percent='{{Juser.exp*100/Juser.aexp}}'></progress>
-              </view>
-              <view class='topheadlevelexp'>{{Juser.exp}}/{{Juser.aexp}}</view>
-            </view>
-            <view wx:else>
-              欢迎关注精卫看世界
-            </view>
-          </view>   
-        </view>
-        <view class='topbottom'>
-          <view class='topbottomleft'>
-            <image class='topbottomimg' src='../../images/role.png'></image>
-            <view class='topbottomtxt' wx:if='{{!noC}}'>
-              <view class='topbottomtxttop'>LV{{Juser.level}}.{{Juser.lname}}</view>
-              <view class='topbottomtxtbottom' bindtap='level'>查看等级制度</view>
-            </view>
-            <view class='topbottomtxt' wx:else>
-              <view class='topbottomtxttop'>等级</view>
-              <view class='topbottomtxtbottom'>未知</view>
-            </view>
-          </view>
-          <view class='topbottomright'>
-            <image class='topbottomimg' src='../../images/money.png'></image>
-            <view wx:if='{{!noC}}' class='topbottomtxt'>
-              <view class='topbottomtxttop'>{{Juser.money}}元</view>
-              <view class='topbottomtxtbottom'  bindtap='money'>提现</view>
-            </view>
-            <view class='topbottomtxt' wx:else>
-              <view class='topbottomtxttop'>奖励金</view>
-              <view class='topbottomtxtbottom'>未知</view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class='applyrecord'>
-        <view class='applyrecordtop'>申请记录</view>
-        <view class='applyrecordbottom'>
-          <navigator url='../user/order/order?id=0' class='applyrecorditem1'>
-            <view class='applyrecorditemi1' hidden='{{j1==0}}'>{{j1}}</view>
-            <image class='applyrecorditemimg1' src='../../images/apply.png'></image>
-            <view class='applyrecorditemtxt'>已申请</view>
-          </navigator>
-          <navigator url='../user/order/order?id=1' class='applyrecorditem1'>
-            <view class='applyrecorditemi2' hidden='{{j2==0}}'>{{j2}}</view>
-            <image class='applyrecorditemimg1' src='../../images/working.png'></image>
-            <view class='applyrecorditemtxt'>工作中</view>
-          </navigator>
-          <navigator url='../user/order/order?id=2' class='applyrecorditem1'>
-            <view class='applyrecorditemi3' hidden='{{j3==0}}'>{{j3}}</view>
-            <image class='applyrecorditemimg1' src='../../images/finish.png'></image>
-            <view class='applyrecorditemtxt'>已完成</view>
-          </navigator>
-        </view>
-      </view>
-      <view class='other'>
-        <view class='otheritem' bindtap='Jform'   wx:if="{{noC}}">
-          <view class='otheritemtxt'>信息完善</view>
-        </view>
-        <navigator url='../user/Jform/Jform?id={{id}}' wx:else>
-          <view class='otheritem'>
-            <view class='otheritemtxt'>修改信息</view>
-            <view class='otheritemtxt' hidden='{{audit}}' style='color:red;'>(审核失败)</view>          
-          </view>
-        </navigator>
-        <navigator url='../user/resume/resume'>
-          <view class='otheritem'>
-            <view class='otheritemtxt'>个人简历</view>
-          </view>
-        </navigator>
-        <navigator url='../user/chat/chat' hidden='{{chat}}'>
-          <view class='otheritem'>
-            <view class='otheritemtxt'>闲聊讨论</view>
-          </view>
-        </navigator>
-        <view class='otheritem'>
-          <view class='otheritemtxt' bindtap='help'>求助反馈</view>
-        </view>
-        <navigator url='../user/about/about'>
-          <view class='otheritem'>
-            <view class='otheritemtxt'>关于我们</view>
-          </view>
-        </navigator> 
-      </view>
-      <view class='error'>
-        <view class='error_item1'>
-          <text>误选身份？</text>
-          <text style='color:#999999;' bindtap='ireset'>身份重置</text>
-        </view>
-        <view  class='error_item2'>身份重置需手动切换到其他界面再切换回来进行刷新</view>
-      </view>-->
       <button  wx:if='{{userInfo.nickName==null}}' class='help' open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text decode='true'>请&emsp;授&emsp;权</text></button>
       <block wx:else>
       <view class='user_main'>
@@ -237,27 +138,6 @@
       <button  wx:if='{{userInfo.nickName==null}}' class='help' open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text decode='true'>请&emsp;授&emsp;权</text></button>
       <block wx:else>
         <form bindsubmit='formSubmit'>
-          <!--<view class='login'>
-            <view class='login_code'>账号：
-              <input class='login_cp_input' name="code" placeholder='请输入账号'></input>
-            </view>
-            <view class='login_pwd'>密码：
-              <input type="password" class='login_cp_input' name="pwd" placeholder='请输入密码'></input>
-            </view>
-            <view class='login_pwd' hidden='{{hide2}}'>提示：
-              <view class='login_cp_input' wx:if="{{hint==null}}">请先输入账号</view>
-              <view class='login_cp_input' wx:else>{{hint}}</view>
-            </view>
-            <button plain='true' class='login_btn' form-type='submit'>登录</button>
-            <view class='login_bottom'>
-              <view class='login_bottom_top'>
-                <view class='login_bottom_item' bindtap='register'>注册</view>
-                <view class='login_bottom_item' bindtap='ireset'>身份重置</view>
-                <view class='login_bottom_item' bindtap='help'>求助反馈</view>
-              </view>
-              <view  class='login_bottom_bottom'>身份重置需手动切换到其他界面再切换回来进行刷新</view>
-            </view>
-          </view>-->
           <view class='login'>
             <input class='login_input1' placeholder='账号' name="code" placeholder-style='color:#C6C8D1;'></input>
             <input class='login_input2' placeholder='密码' name="pwd" type='password' placeholder-style='color:#C6C8D1;'></input>

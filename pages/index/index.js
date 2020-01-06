@@ -1,4 +1,5 @@
 var app = getApp()
+const util = require('../../utils/util.js')
 Page({
   data: {
     newImage0: [],
@@ -57,6 +58,7 @@ Page({
         url: 'https://jwjob.gesilaa6.club/index.php/index/partjob/sortPartjob.html',
         data:{type:1},
         success: function (res) {
+          util.formatArray(res.data.data,1)
           that.setData({
             newImage0: res.data.data,
             hidden: !that.data.hidden
@@ -68,6 +70,7 @@ Page({
         url: 'https://jwjob.gesilaa6.club/index.php/index/partjob/sortPartjob.html',
         data:{type:0},
         success: function (res) {
+          util.formatArray(res.data.data, 1)
           that.setData({
             newImage0: res.data.data,
             hidden: !that.data.hidden
@@ -88,6 +91,7 @@ Page({
         url: 'https://jwjob.gesilaa6.club/index.php/index/partjob/sortPartjob.html',
         data:{type:0},
         success: function (res) {
+          util.formatArray(res.data.data, 1)
           that.setData({
             newImage0: res.data.data,
             hidden: false,
@@ -99,6 +103,7 @@ Page({
         url: 'https://jwjob.gesilaa6.club/index.php/index/partjob/sortPartjob.html',
         data: { type: 1 },
         success: function (res) {
+          util.formatArray(res.data.data, 1)
           that.setData({
             newImage0: res.data.data,
             hidden: false,
@@ -116,10 +121,11 @@ Page({
   confirm: function () {
     var that = this
     wx.request({
-      url: 'https://haijiao.pw/weicms/index.php?s=/addon/Partjob/Partjob/getScreenJob',
+      url: 'https://jwjob.gesilaa6.club/index.php/index/partjob/getScreenJob.html',
       data: { type: that.data.typeid, ctype: that.data.typeid1, sex: that.data.typeid2 },
       success: function (res) {
-        that.setData({ newImage0: res.data, hidden: !that.data.hidden })
+        util.formatArray(res.data.data, 1)
+        that.setData({ newImage0: res.data.data, hidden: !that.data.hidden })
       }
     })
     that.setData({ showModal: false, hidden: !that.data.hidden })

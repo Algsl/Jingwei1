@@ -1,0 +1,56 @@
+<view class="withdraw">
+  <view class="swiper-tab-item {{currentTab==0?'activity':''}}" data-current="0"  bindtap='clickTab'>提  现</view>
+  <view class="swiper-tab-item {{currentTab==1?'activity':''}}" data-current="1"  bindtap='clickTab'>交易记录</view>
+  <swiper class='sw' current="{{currentTab}}" duration='300'  bindchange='swiperTab'>
+    <swiper-item>
+      <view class='withdraw_bottom'>
+        <view class='withdraw_bottom_content_top'>
+          <view class='withdraw_bottom_content_top_left'>
+            <image class='withdraw_bottom_content_top_left' src='https://haijiao.pw/img/logo1.jpg'></image>
+          </view>
+          <view class='withdraw_bottom_content_top_right'>
+            <view class='withdraw_bottom_content_top_right_top'>精卫电子商务</view>
+            <view class='withdraw_bottom_content_top_right_bottom'>提现到微信零钱</view>
+          </view>
+        </view>
+        <view class='withdraw_form'>
+          <form bindsubmit='submit'>
+            <view class='withdraw_form_item'>提现金额</view>
+            <view class='withdraw_form_item' style='color:black;font-size:60rpx;border-bottom:1rpx solid #F6F6F6'>￥<input type='number' style='height:90rpx;line-height:90rpx;' name="money" value='{{money}}'></input></view>
+            <view class='withdraw_form_item'>可用余额{{money}}元</view>
+            <view class='withdraw_form_item1'>
+              <view class='withdraw_form_item1_btn'><button form-type='submit'>提现</button></view>
+              <view class='withdraw_form_item1_hint'>每日仅能提现一次</view>
+            </view>
+          </form>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style='margin-top:30rpx;height:900rpx;'>
+          <view wx:for="{{list}}" wx:key="key">
+            <view class='deal_item'>
+              <!--<view wx:if="{{item.type==0}}" class='deal_item_left'>
+                <image class='deal_item_img' src='../../../images/in.png'></image>
+              </view>
+              <view wx:if="{{item.type==1}}" class='deal_item_left'>
+                <image class='deal_item_img' src='../../../images/out.png'></image>
+              </view>-->
+              <view class='deal_item_center'>
+                <view class='deal_item_center_top'>{{item.title}}</view>
+                <view class='deal_item_center_bottom'>{{item.time}}</view>
+              </view>
+              <view wx:if="{{item.type==0}}" class='deal_item_right' style='color:#5DAE85;'>
+                <view class='deal_item_right_left'>+</view>
+                <view class='deal_item_right_right'>{{item.sum}}</view>
+              </view>
+              <view wx:if="{{item.type==1}}" class='deal_item_right'>
+                <view class='deal_item_right_left'>-</view>
+                <view class='deal_item_right_right'>{{item.sum}}</view>
+              </view>
+            </view>
+          </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,4 +1,5 @@
 var app = getApp()
+const util = require('../../../utils/util.js')
 Page({
   /**
    * 页面的初始数据
@@ -156,6 +157,7 @@ Page({
       url: 'https://jwjob.gesilaa6.club/index.php/index/partjob/getDetail.html',
       data: { id: options.id },
       success: function (res) {
+        util.formatSingle(res.data.data,2)
         that.setData({ info: res.data.data })
         if (res.data.openId != app.globalData.openId) {
           that.setData({ hide: true })

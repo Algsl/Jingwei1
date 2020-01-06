@@ -1,0 +1,20 @@
+<form bindsubmit='retripwd' class='main'>
+  <view class='txt'>欢迎使用精卫看世界</view>
+  <view class='content'>
+    <image class='content_img' src='../../../images/username.png'></image>
+    <input class='content_input' placeholder='用户名（6-32位英文字符）' name="code" placeholder-style='font-size:28rpx;color:#C6C8D1'></input>
+  </view>
+  <view class='content'>
+    <image class='content_img' src='../../../images/password.png'></image>
+    <input class='content_input' placeholder='密码（必须包含数字、英文）' type='password' name="pwd" placeholder-style='font-size:28rpx;color:#C6C8D1'></input>
+  </view>
+  <view class='content'>
+    <image class='content_img' src='../../../images/password.png'></image>
+    <input class='content_input' placeholder='确认密码' type='password' name="rpwd" placeholder-style='font-size:28rpx;color:#C6C8D1'></input>
+  </view>
+  <view class='content'>
+    <image class='content_img' src='../../../images/phone.png'></image>
+    <input class='content_input' type='number' name="mobile" placeholder='换绑手机号' placeholder-style='font-size:28rpx;color:#C6C8D1' value='{{mobile}}'></input>
+  </view>
+  <button class='btn' form-type='submit'>立即找回</button>
+</form>

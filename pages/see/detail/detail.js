@@ -21,7 +21,7 @@ Page({
           url: 'https://jwjob.gesilaa6.club/index.php/index/see/getDetail.html',
           data: { id: options.id },
           success: function (res) {
-            util.formatSingle(res.data.data)
+            util.formatSingle(res.data.data, 0)
             that.setData({info: res.data.data})
           }
         })

@@ -1,0 +1,389 @@
+/*整体布局*
+.jform{
+  width: 100%;
+  background-color:#EDF0EF;
+}
+
+/*头部布局*
+.top{
+  width: 100%;
+  height:164rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+/*头部图片*
+.topimg{
+  width:132rpx ;
+  height:132rpx;
+  border-radius:50%;
+  margin: 15rpx;
+  background-color:grey;
+}
+/*头部右侧*
+.topright{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+  width: 70%;
+  height: 132rpx;
+}
+/*头部右上*
+.toprightup{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color:#616161;
+}
+/*头部右下*
+.toprightdown{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color:red;
+}
+
+/*内容布局*
+.content{
+  margin-top: 20rpx;
+  width: 100%;
+  background-color:white;
+}
+/*内容条目*
+.content_item{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 96rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #D6D6D6; 
+}
+/*内容条目左侧*
+.content_item_left{
+  display: flex;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 15rpx;
+  margin-top: 18rpx;
+}
+/*内容条目右侧*
+.content_item_right{
+  width: 50%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 30rpx;
+  margin-top: 18rpx;
+}
+.content_item_right1{
+  width: 40%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 30rpx;
+  margin-top: 18rpx;
+}
+/*内容条目提示*
+.content_item_hint{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 25rpx;
+  color:red;
+  font-size: 40rpx;
+}
+/*内容条目输入*
+.content_item_right_input{
+  width: 100%;
+  height: 60rpx;
+}
+/*获取手机号按钮*
+.getphonebtn{
+  margin-top:20rpx;
+  width: 150rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  background-color:#5DAE85;
+  color:white;
+  font-size:28rpx;
+}
+
+/*内容1：*
+.content1{
+  width: 100%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  background-color: white;
+}
+/*内容1：头部*
+.content1_top{
+  width: 100%;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #D6D6D6; 
+}
+/*内容1：下方文本区*
+.content1_bottom_txtarea{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+}
+
+/*内容2*
+.content2{
+  width: 100%;
+  height: 96rpx;
+  margin-top: 20rpx;
+  background-color: white;
+}
+/*内容2：条目*
+.content2_item{
+  width: 100%;
+  height: 96rpx;
+  text-align: center;
+  line-height: 96rpx;
+  color:#616161;
+}
+
+/*内容3*
+.content3{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 120rpx;
+  bottom: 0;
+  border-radius: 0rpx;
+}
+/*内容3：按钮*
+.content3_btn{
+  width: 50%;
+  height:120rpx;
+  line-height:120rpx;
+  border-radius: 0rpx;
+  background:#5DAE85;
+  color:white;
+}
+
+::-webkit-scrollbar{
+  width: 0rpx;
+  height: 0rpx;
+  background-color:transparent;
+}*/
+
+.main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content1{
+  width: 100%;
+  height: 80px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.5px solid #EBECF1;
+}
+.content1_left{
+  width: 288px;
+  height: 48.4px;
+  margin-left: 5.3%;
+  margin-top: 15.6px;
+  display: flex;
+  flex-direction: column;
+}
+.content1_left_top{
+  width: 182px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #202437;
+}
+.content1_left_bottom{
+  height: 20px;
+  line-height: 20px;
+  margin-top: 5px;
+  font-size: 10px;
+  color: #F0454C;
+}
+.content1_right{
+  width: 48.4px;
+  height: 48.4px;
+  margin-top: 15.6px;
+  border-radius: 50%;
+}
+
+.content2{
+  width: 100%;
+  height: 74px;
+  border-bottom: 0.5px solid #EBECF1;
+}
+.content2_top{
+  height: 20px;
+  line-height: 20px;
+  margin-left: 5.3%;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #515666;
+}
+.content2_bottom{
+  height: 20px;
+  line-height: 20px;
+  margin-left: 5.3%;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #515666;
+}
+
+.content3{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.5px solid #EBECF1;
+}
+.content3_left{
+  width: 64px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 5.3%;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #515666;
+}
+.content3_right{
+  height: 30px;
+  line-height: 30px;
+  margin-left: 35%;
+  margin-top: 15px;
+  text-align: right;
+}
+.content3_right1{
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 40%;
+  margin-top: 15px;
+  text-align: right;
+}
+.content3_right_item{
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #797E8B;
+}
+.content4{
+  width: 100%;
+  height: 74px;
+  border-bottom: 0.5px solid #EBECF1;
+}
+.content4_top{
+  height: 20px;
+  line-height: 20px;
+  margin-left: 5.3%;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #515666;
+}
+.content4_bottom{
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: row;
+}
+.content4_bottom_left{
+  width: 255px;
+  height: 25px;
+  line-height: 25px;
+  margin-left: 5.3%;
+  font-size: 14px;
+  color: #515666;
+}
+.content4_bottom_right{
+  width: 70px;
+  height: 25px;
+  line-height: 25px;
+  margin-left: 2.7%;
+  text-align: center;
+  font-size: 11px;
+  color: #FFFFFF;
+  border-radius: 4px;
+  background: #1EC996;
+}
+
+.content5{
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solide #EBECF1;
+}
+.content5_left{
+  margin-left: 5.3%;
+}
+.content5_right{
+  height: 30px;
+  line-height: 30px;
+  margin-left:2.7%;
+  font-size: 16px;
+  color: #797E8B;
+}
+
+.content6{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  border-top: 0.5px solid #EBECF1;
+}
+.content6_left{
+  width: 162px;
+  height: 36px;
+  line-height: 36px;
+  margin-left: 5.3%;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #1AAE82;
+  border: 0 solid #00CD91;
+  border-radius: 2px;
+  background: rgba(30,201,150,0.15);
+}
+.content6_right{
+  width: 162px;
+  height: 36px;
+  line-height: 36px;
+  margin-left: 2.9%;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #FFFFFF;
+  border-radius: 2px;
+  background: #1EC996;
+}
+
+.content7{
+  width: 100%;
+  height: 120rpx;
+  border-top: 1rpx solid #E1E2E6;
+}
+.content7_btn{
+  width: 670rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin-left: 40rpx;
+  margin-top: 24rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 4rpx;
+  color: #FFFFFF;
+  background: #1EC996;
+}

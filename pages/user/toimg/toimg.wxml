@@ -1,0 +1,8 @@
+<view style='width:800px;'>
+<scroll-view  hidden='{{hide}}' scroll-x scroll-y style='width:400px;height:1000px;'>
+  <canvas  style="width:800px;height: 1000px;" canvas-id="mycanvas"/>
+</scroll-view>
+<image style='margin-left:30%;height:1000rpx;' hidden='{{!hide}}'  bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+<button bindtap='formSubmit' class='btn'  hidden='{{hide}}'>生成图片</button>
+<view hidden='{{!hide}}' class='hint'>点开图片后，长按可进行其他操作</view>
+</view>

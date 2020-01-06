@@ -1,0 +1,20 @@
+<view class='withdraw_bottom'>
+  <view class='withdraw_bottom_content_top'>
+    <view class='withdraw_bottom_content_top_left'>
+      <image class='withdraw_bottom_content_top_left' src='https://haijiao.pw/img/logo1.jpg'></image>
+    </view>
+    <view class='withdraw_bottom_content_top_right'>
+      <view class='withdraw_bottom_content_top_right_top'>精卫电子商务</view>
+      <view class='withdraw_bottom_content_top_right_bottom'>付款给：精卫电子商务</view>
+    </view>
+  </view>
+  <view class='withdraw_form'>
+    <form bindsubmit='formSubmit'>
+      <view class='withdraw_form_item'>支付金额</view>
+      <view class='withdraw_form_item' style='color:black;font-size:60rpx;border-bottom:1rpx solid #F6F6F6'>￥<input type='number' style='height:90rpx;line-height:90rpx;' name="money" value='{{money}}'></input></view>
+      <view class='withdraw_form_item1'>
+        <view class='withdraw_form_item1_btn'><button form-type='submit'>支付</button></view>
+      </view>
+    </form>
+  </view>
+</view>

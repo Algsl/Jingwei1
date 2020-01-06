@@ -1,0 +1,182 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'activity':''}}" data-current="0"  bindtap='clickTab'>已申请</view>
+  <view class="swiper-tab-item {{currentTab==1?'activity':''}}" data-current="1"  bindtap='clickTab'>工作中</view>
+  <view class="swiper-tab-item {{currentTab==2?'activity':''}}" data-current="2"  bindtap='clickTab'>已完成</view>
+</view>
+<swiper current="{{currentTab}}" duration='300' bindchange='swiperTab'class="swiper">
+  <swiper-item>
+    <view wx:if="{{applyInfo!=null}}">
+      <navigator url='../../index/ldetail/ldetail?id={{applyInfo.id}}'  class='item'>
+        <!--<image class='item_img' src='{{applyInfo.img}}'></image>
+        <view class='item_right'>
+          <view class='item_right1'>
+            <view class='item_right1_title'>{{applyInfo.title}}</view>
+            <view class='item_right1_price'>￥{{applyInfo.price}}/天</view>
+          </view>
+          <view class='item_right2'>
+            <image class='item_right2_img' src='../../../images/date.png'></image>
+            <view>{{applyInfo.time}}发布</view>
+          </view>
+          <view class='item_right3'>
+            <view class='item_right3_l'>
+              <image class='item_right2_img' src='../../../images/audit.png'></image>
+              <view>{{applyInfo.area}}</view>
+            </view>
+            <view class='item_right3_2'>待审核</view>
+            <navigator url='../../user/order/order?id={{applyInfo.id}}' class='item_right3_l'>
+              <image class='item_right2_img' src='../../../images/delete.png'></image>
+              <view>删除</view>
+            </navigator>
+          </view>
+        </view>-->
+        <view class='content'>
+          <image class='content_left' src='{{applyInfo.img}}'></image>
+          <view class='content_right'>
+            <view class='content_item1'>
+              <view class='content_item1_left'>
+                <view class='content_item1_left_top'>{{applyInfo.title}}</view>
+                <view class='content_item1_left_bottom'>
+                  <image class='content_item1_left_bottom_left' src='../../../images/location.png'></image>
+                  <view class='content_item1_left_bottom_right'>{{applyInfo.area}}</view>
+                </view>
+              </view>
+              <view class='content_item1_right'>
+                <view class='content_item1_right_num'>￥{{applyInfo.price}}</view>
+                <view wx:if="{{applyInfo.ctype==0}}" class='content_item1_right_txt'>/天</view>
+                <view wx:elif="{{applyInfo.ctype==1}}" class='content_item1_right_txt'>/次</view>
+                <view wx:elif="{{applyInfo.ctype==2}}" class='content_item1_right_txt'>/小时</view>
+                <view wx:elif="{{applyInfo.ctype==3}}" class='content_item1_right_txt'>/周</view>
+                <view wx:elif="{{applyInfo.ctype==4}}" class='content_item1_right_txt'>/月</view>
+              </view>
+            </view>
+            <view class='content_item2'>
+              <view class='content_item2_left'>已申请</view>
+              <view class='content_item2_right'>{{applayInfo.time}}发布</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view wx:if="{{work!=null}}" class='item'>
+      <!--<image class='item_img' src='{{work.img}}'></image>
+      <view class='item_right'>
+        <view class='item_right1'>
+          <view class='item_right1_title'>{{work.title}}</view>
+          <view class='item_right1_price'>￥{{work.price}}/天</view>
+        </view>
+        <view class='item_right2'>
+          <image class='item_right2_img' src='../../../images/date.png'></image>
+          <view>{{work.time}}发布</view>
+        </view>
+        <view class='item_right3'>
+          <view class='item_right3_l'>
+            <image class='item_right2_img' src='../../../images/date.png'></image>
+            <view>{{work.area}}</view>
+          </view>
+          <view class='item_right3_l'>工作中</view>
+        </view>
+      </view>-->
+      <view class='content'>
+        <image class='content_left' src='{{work.img}}'></image>
+        <view class='content_right'>
+          <view class='content_item1'>
+            <view class='content_item1_left'>
+              <view class='content_item1_left_top'>{{work.title}}</view>
+              <view class='content_item1_left_bottom'>
+                <image class='content_item1_left_bottom_left' src='../../../images/location.png'></image>
+                <view class='content_item1_left_bottom_right'>{{work.area}}</view>
+              </view>
+            </view>
+            <view class='content_item1_right'>
+              <view class='content_item1_right_num'>￥{{work.price}}</view>
+              <view wx:if="{{work.ctype==0}}" class='content_item1_right_txt'>/天</view>
+              <view wx:elif="{{work.ctype==1}}" class='content_item1_right_txt'>/次</view>
+              <view wx:elif="{{work.ctype==2}}" class='content_item1_right_txt'>/小时</view>
+              <view wx:elif="{{work.ctype==3}}" class='content_item1_right_txt'>/周</view>
+              <view wx:elif="{{work.ctype==4}}" class='content_item1_right_txt'>/月</view>
+            </view>
+          </view>
+          <view class='content_item2'>
+            <view class='content_item2_left'>工作中</view>
+            <view class='content_item2_right'>{{work.time}}发布</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <!--<view wx:for="{{finish}}" wx:key="key" class='item'>
+      <image class='item_img' src='{{item.img}}'></image>
+      <view class='item_right'>
+        <view class='item_right1'>
+          <view class='item_right1_title'>{{item.title}}</view>
+          <view class='item_right1_price'>￥{{item.price}}/天</view>
+        </view>
+        <view class='item_right2'>
+          <image class='item_right2_img' src='../../../images/date.png'></image>
+          <view>{{item.time}}发布</view>
+        </view>
+        <view class='item_right3'>
+          <view class='item_right3_l'>
+            <image class='item_right2_img' src='../../../images/date.png'></image>
+            <view>{{item.area}}</view>
+          </view>
+          <view class='item_right3_l'>已完成</view>
+        </view>
+      </view>
+    </view>-->
+    <scroll-view scroll-y="true" style='height:1000rpx;'>
+      <view wx:for="{{finish}}" wx:key="key">
+        <!--<view class='item'>
+          <image class='item_img' src='{{item.fimg}}'></image>
+          <view class='item_right'>
+            <view class='item_right1'>
+              <view class='item_right1_title'>{{item.title}}</view>
+              <view class='item_right1_price'>￥{{item.price}}/天</view>
+            </view>
+            <view class='item_right2'>
+              <image class='item_right2_img' src='../../../images/date.png'></image>
+              <view>{{item.ftime}}发布</view>
+            </view>
+            <view class='item_right3'>
+              <view class='item_right3_l'>
+                <image class='item_right2_img' src='../../../images/audit.png'></image>
+                <view>已完成</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>-->
+        <view class='content'>
+          <image class='content_left' src='{{item.fimg}}'></image>
+          <view class='content_right'>
+            <view class='content_item1'>
+              <view class='content_item1_left'>
+                <view class='content_item1_left_top'>{{item.title}}</view>
+                <view class='content_item1_left_bottom'>
+                  <image class='content_item1_left_bottom_left' src='../../../images/location.png'></image>
+                  <view class='content_item1_left_bottom_right'>{{item.area}}</view>
+                </view>
+              </view>
+              <view class='content_item1_right'>
+                <view class='content_item1_right_num'>￥{{item.price}}</view>
+                <view wx:if="{{item.ctype==0}}" class='content_item1_right_txt'>/天</view>
+                <view wx:elif="{{item.ctype==1}}" class='content_item1_right_txt'>/次</view>
+                <view wx:elif="{{item.ctype==2}}" class='content_item1_right_txt'>/小时</view>
+                <view wx:elif="{{item.ctype==3}}" class='content_item1_right_txt'>/周</view>
+                <view wx:elif="{{item.ctype==4}}" class='content_item1_right_txt'>/月</view>
+              </view>
+            </view>
+            <view class='content_item2'>
+              <view class='content_item2_left'>已完成</view>
+              <view class='content_item2_right'>{{item.ftime}}发布</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+

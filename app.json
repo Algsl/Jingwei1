@@ -6,13 +6,32 @@
     "pages/index/index",
     "pages/index/search/search",
     "pages/index/detail/detail",
+    "pages/index/linkage/linkage",
+    "pages/index/all/all",
     "pages/user/user",
+    "pages/user/Jform/Jform",
+    "pages/user/about/about",
+    "pages/user/agreement/agreement",
+    "pages/user/chat/chat",
+    "pages/user/employee/employee",
+    "pages/user/help/help",
+    "pages/user/issue/issue",
+    "pages/user/mform/mform",
+    "pages/user/myissue/myissue",
+    "pages/user/order/order",
+    "pages/user/pay/pay",
+    "pages/user/order1/order1",
+    "pages/user/register/register",
+    "pages/user/resume/resume",
+    "pages/user/retripwd/retripwd",
+    "pages/user/toimg/toimg",
+    "pages/user/withdraw/withdraw",
     "pages/honor/honor"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "精卫看世界",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -37,5 +56,6 @@
       }
     ]
   },
-  "style": "v2"
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
 }

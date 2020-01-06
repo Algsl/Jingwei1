@@ -1,0 +1,37 @@
+.main{
+  margin:20rpx;
+}
+.title{
+  font-size: 50rpx;
+  margin-left: 15%;
+  line-height: 100rpx;
+}
+.content{
+  font-size:30rpx;
+}
+.citem{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+.title1{
+  font-size:45rpx;
+  margin:10rpx;
+  line-height: 60rpx;
+}
+.title2{
+  font-size:35rpx;
+  margin:5rpx;
+  line-height: 60rpx;
+}
+.title2 text{
+  color:#333333;
+}
+text{
+  line-height: 60rpx;
+  color:grey;
+}
+::-webkit-scrollbar{
+  width: 0rpx;
+  height: 0rpx;
+  color:transparent;
+}

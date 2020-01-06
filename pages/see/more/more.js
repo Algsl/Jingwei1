@@ -19,7 +19,7 @@ Page({
             url: 'https://jwjob.gesilaa6.club/index.php/index/see/getList.html',
             data: { limit: 0, type: 0 },
             success: function (res) {
-               util.formatArray(res.data.data);
+               util.formatArray(res.data.data,0);
                that.setData({ list: res.data.data }) 
               }
           })
@@ -28,7 +28,7 @@ Page({
             url: 'https://jwjob.gesilaa6.club/index.php/index/see/getList.html',
             data: { limit: 0, type: 1 },
             success: function (res) {
-                util.formatArray(res.data.data);
+              util.formatArray(res.data.data, 0);
                 that.setData({ list: res.data.data }) 
               }
           })
@@ -37,7 +37,7 @@ Page({
             url: 'https://jwjob.gesilaa6.club/index.php/index/see/getList.html',
             data: { limit: 0, type: 2 },
             success: function (res) {
-              util.formatArray(res.data.data); 
+              util.formatArray(res.data.data, 0); 
               that.setData({ list: res.data.data }) 
             }
           })

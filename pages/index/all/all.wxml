@@ -1,0 +1,38 @@
+<template name="lists">
+  <navigator hidden='{{need<=0}}' url='../detail/detail?id={{id}}' hover-class='navigator-hover'>
+    <view class='content3'>
+      <view class='content3_item'>
+        <view class='content3_item_1'>
+          <view class='content3_item_1_txt1'>{{title}}</view>
+          <view class='content3_item_1_txt2'>￥{{price}}</view>
+          <view class='split1'>/</view>
+          <view wx:if="{{ctype==0}}" class='content3_item_1_txt3'>天</view>
+          <view wx:elif="{{ctype==1}}" class='content3_item_1_txt3'>次</view>
+          <view wx:elif="{{ctype==2}}" class='content3_item_1_txt3'>小时</view>
+          <view wx:elif="{{ctype==3}}" class='content3_item_1_txt3'>周</view>
+          <view wx:elif="{{ctype==4}}" class='content3_item_1_txt3'>月</view>
+        </view>
+        <view class='content3_item_2'>
+          <image class='content3_item_2_img' src='../../../images/location.png'></image>
+          <view class='content3_item_2_txt'>{{area}}</view>
+        </view>
+        <view class='content3_item_3'>
+          <view class='content3_item_3_txt1'>所需{{need}}人</view>
+          <view class='split'>/</view>
+          <view class='content3_item_3_txt2'>性别 {{sex==0?'不限':sex==1?'男':'女'}}</view>
+          <view class='split'>/</view>
+          <view class='content3_item_3_txt3'>{{hot}}次浏览</view>
+          <view class='content3_item_3_txt4'>{{time}}</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+<scroll-view scroll-y="true">
+  <view class='sv-item-y'>
+    <view wx:for="{{pjlist}}" wx:key="unique">
+      <template is="lists" data="{{...item}}"/>
+    </view>
+  </view>
+  <view class="over">没有更多了</view>
+</scroll-view>

@@ -1,0 +1,100 @@
+<!--<view class='head'>
+  <text>求职者列表</text>
+</view>
+<view hidden='{{hide1}}'>
+  <form bindsubmit='submit'>
+    <view>请给出您的评价：</view>
+    <view class='form'>
+      <textarea name="praise" value='默认好评' class='f_txtarea'></textarea>
+      <button form-type='submit' class='btn'>提交</button>
+    </view>
+  </form>
+</view>
+<view class='item' wx:for="{{list}}" wx:key="key">
+  <image class='img' src='{{item.aimg}}'></image>
+  <view class='item1'>
+    <view class='item2_name'>
+      <view class='txt'>{{item.name}}</view>
+      <image class='item_img' src='../../../images/audit.png'></image>
+      <view wx:if="{{item.status==0}}">  
+        <view class='txt1'>待确认</view>  
+      </view>
+      <view wx:if="{{item.status==1}}">
+        <view class='txt1'>工作中</view>
+      </view>
+      <view wx:if="{{item.status==2}}">
+        <view class='txt1'>已完成</view>
+      </view>
+    </view>
+    <view class='item2'>
+      <view class="radio" wx:if="{{item.status==0}}">
+        <radio-group name="audit" bindchange="change" id='{{item.id}}'>
+          <radio value='1' class='agree'>同意</radio>
+          <radio value='2'>拒绝</radio>
+        </radio-group>
+      </view>
+      <view style='display:flex;flex-direction:row;margin-left:20rpx;'>
+        <image class='item_img' src='../../../images/see1.png'></image>
+        <view class='txt1'>查看</view>  
+      </view>
+      <view wx:if="{{item.status==2}}" class='item2'>
+        <image class='item_img' src='../../../images/send.png'></image>
+        <view wx:if="{{item.praise==0}}">
+          <view class='txt1' bindtap='praise' id='{{item.id}}'>待评价</view>
+        </view>
+        <view wx:else>
+          <view class='txt1'>已评价</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>-->
+<view class="main">
+  <scroll-view scroll-y style='height:1190rpx;'>
+    <view wx:for="{{lists}}" wx:key="item">
+      <view class='item'>
+        <image class='item_left' src="{{item.aimg}}"></image>
+        <view class='item_right' wx:if="{{item.status==0}}">
+          <view class='item_right_top'>{{item.name}} / {{item.sex==0?'男':'女'}} / 待审核</view>
+          <radio-group  class='item_right_bottom' name="audit" bindchange="change" id='{{item.id}}'>
+            <radio value='1'>同意</radio>
+            <radio value='2' style="margin-left:30rpx;">拒绝</radio>
+          </radio-group>
+        </view>
+        <view class='item_right' wx:if="{{item.status==1}}">
+          <view class='item_right_top'>{{item.name}} / {{item.sex==0?'男':'女'}} / 工作中</view>
+          <view class='item_right_bottom' bindtap='over' id="{{item.id}}">提前结束</view>
+        </view>
+        <view class='item_right' wx:if="{{item.status==2}}">
+          <view class='item_right_top'>{{item.name}} / {{item.sex==0?'男':'女'}} / 已完成</view>
+          <view class='item_right_bottom'></view>
+        </view>
+        <view class='item_right' wx:if="{{item.status==3}}">
+          <view class='item_right_top'>{{item.name}} / {{item.sex==0?'男':'女'}} / 提前结束</view>
+          <view class='item_right_bottom'></view>
+        </view>
+      </view>
+    </view>
+    <view class='nomore'>没有更多了</view>
+  </scroll-view>
+  <form class='form' hidden='{{isHidden}}' bindsubmit='formSubmit'>
+    <view class='form_top'>
+      <view class='form_top_center'>结束原由</view>
+      <view class='form_top_right' bindtap='cancel'>取消</view>
+    </view>
+    <view class='form_content1'>
+      <view class='form_content1_top'>理由</view>
+      <view class='form_content1_bottom'>
+        <textarea class='form_content1_bottom_txt' name="praise"></textarea>
+      </view>
+    </view>
+    <view class='form_content2'>
+      <view class='form_content2_top'>应付薪资</view>
+      <view class='form_content2_bottom'>
+        <view class='form_content2_bottom_left'>￥</view>
+        <input class='form_content2_bottom_right' name="money" value='{{money}}'></input>
+      </view>
+    </view>
+    <button form-type='submit' class='form_btn'>确定</button>
+  </form>
+</view>

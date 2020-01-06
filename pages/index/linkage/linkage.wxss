@@ -1,0 +1,133 @@
+.main{
+  display: flex;
+}
+.left{
+  width: 25%;
+  font-size: 28rpx;
+}
+.on{
+  width: 100%;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color:#434343;
+}
+.off{
+  width: 100%;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color:#AEAEAE;
+  background-color:#F6F6F6;
+}
+.right{
+  width: 75%;
+}
+.right_type{
+  width:100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size:36rpx;
+  color:#434343;
+}
+.right_content{
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1rpx solid black;
+}
+.content_item{
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  height:160rpx;
+  border-bottom: 1rpx solid #E1E2E6;
+}
+
+.item_left_img{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 32rpx;
+  margin-left:20rpx;
+  border-radius: 50%;
+}
+.item_right{
+  display: flex;
+  flex-direction: column;
+  width: 380rpx;
+  height: 100rpx;
+  margin-left: 30rpx;
+  margin-top:32rpx;
+  font-size: 28rpx;
+}
+.item_right_top{
+  width:100%;
+  height: 54rpx;
+  display: flex;
+  flex-direction: row;
+}
+.item_right_top_left{
+  width: 200rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 32rpx;
+  color: #202437;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item_right_top_right{
+  width: 120rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 36rpx;
+  color: #1EC996;
+  text-align: right;
+}
+.item_right_top_right1{
+  width: 60rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 24rpx;
+  color: #797E8B;
+  text-align: right;
+}
+.item_right_bottom{
+  width: 100%;
+  height:54rpx;
+  margin-top:10rpx;
+  display: flex;
+  flex-direction: row;
+}
+.item_right_bottom_left{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 15rpx;
+}
+.item_right_bottom_right{
+  width: 200rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #A0A3AF;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nomore{
+  width: 100%;
+  height: 32rpx;
+  line-height: 32rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #202437;
+}
+::-webkit-scrollbar{
+  width: 0rpx;
+  height: 0rpx;
+  background-color:transparent;
+}

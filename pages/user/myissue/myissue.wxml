@@ -1,0 +1,85 @@
+<view class='main'>
+  <view class='head'>
+    <text>我的发布记录</text>
+  </view>
+  <view class='form' hidden='{{hide1}}'>
+    <image class='f_img' src='https://haijiao.pw/img/logo.jpg'></image>
+    <view class='payfor'>付款给：精卫电子商务</view>
+    <form bindsubmit='formSubmit'>
+      <view>付款金额：</view>
+      <view class='money'>
+      ￥<input class='input' name="money" value='{{money}}'></input>
+      </view>
+      <button form-type='submit' class='btn'>支付</button>
+    </form>
+  </view>
+  <template name="lists">
+    <view class='gv'>
+      <image class='gv_img' src='{{img}}'></image>
+      <view class='item'>
+        <view class="txt">
+          <text class='gv_t'>{{title}}</text>
+          <text class="gv_p">￥{{price}}/天</text>
+        </view>
+        <view class="txt0">
+            <image class='s_img' src='/images/time.png'></image>
+            <text class='txt1'>{{time}}</text>
+        </view>
+        <view class="txt0">
+          <view class='txt0' wx:if='{{status==0}}'>
+            <image class='s_img' src='/images/status.png'></image>
+            <text  class='txt1'>待审核</text>
+            <image class='s_img' src='/images/see0.png'></image>
+            <navigator url='../../index/ldetail/ldetail?id={{id}}'>
+              <text class='area'>查看</text>
+            </navigator>
+            <image class='s_img' src='/images/delete.png'></image>
+            <navigator url='../myissue/myissue?id={{id}}'>
+              <text class='area'>删除</text>
+            </navigator>
+          </view>
+          <view class='txt0' wx:if='{{status==1}}'>
+            <image class='s_img' src='/images/status.png'></image>
+            <text style='margin-right: 30rpx;'>审核失败</text>
+            <image class='s_img' src='/images/status.png'></image>
+            <text class='area'>查看原因</text>
+          </view>
+          <view class='txt0' wx:if='{{status==2}}'>
+            <image class='s_img' src='/images/status.png'></image>
+            <text  class='txt1'>已发布</text>
+            <image class='s_img' src='/images/see0.png'></image>
+            <navigator url='../../index/ldetail/ldetail?id={{id}}'>
+              <text class='area'>查看</text>
+            </navigator>
+            <image class='s_img' src='/images/user2.png'></image>
+            <navigator url='../employee/employee?id={{id}}'>
+              <text class='area'>求职者</text>
+            </navigator>
+          </view>
+          <view class='txt0' wx:if='{{status==3}}'>
+            <image class='s_img' src='/images/status.png'></image>
+            <view wx:if="{{money==0}}">
+              <text  class='area' bindtap='pay' id="{{id}}">待支付</text>
+            </view>
+            <view wx:else>
+              <text  class='txt1'>已支付</text>
+            </view>
+            <image class='s_img' src='/images/see0.png'></image>
+            <navigator url='../../index/ldetail/ldetail?id={{id}}'>
+              <text class='area'>查看</text>
+            </navigator>
+            <image class='s_img' src='/images/user2.png'></image>
+            <navigator url='../employee/employee?id={{id}}'>
+              <text class='area'>求职者</text>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </template>
+  <view class='sv-item-y'>
+    <view wx:for="{{issue}}" wx:key="unique">
+      <template is="lists" data="{{...item}}"/>
+    </view>
+  </view>
+</view>

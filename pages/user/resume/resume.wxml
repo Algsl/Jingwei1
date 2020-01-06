@@ -1,0 +1,161 @@
+<view class='main'>
+  <form bindsubmit='formSubmit'>
+  <scroll-view scroll-y style='height:1040rpx;'>
+  <view class='title'>个人简历</view>
+  <view class='top'>
+    <view class='top_left'>
+      <view class='top_left_top'>
+        <image class='top_left_top_img' catchtap="chooseImageTap" src='{{img}}' name="img"></image>
+      </view>
+      <view class='top_left_bottom'>1寸免冠照</view>
+    </view>
+    <view class='top_right'>
+      <view class='top_right_item'>
+        <view class='top_right_item_txt'><text decode='true'>姓&emsp;名</text></view>
+        <input class='top_right_item_input' name="name" value='{{resume.name}}' placeholder='未填写'></input>
+      </view>
+      <view class='top_right_item'>
+        <view class='top_right_item_txt'><text decode='true'>性&emsp;别</text></view>
+        <radio-group  class='top_right_item_input' name="sex">
+          <radio value='0' checked='{{resume.sex==0}}'>男</radio>
+          <radio style='margin-left:30rpx;' value='1'  checked='{{resume.sex==1}}'>女</radio>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <view class='content1'>
+    <view class='content1_title'>基本信息<text style='color:red;font-size:60rpx;'>*</text></view>
+    <view class='content1_item'>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>学&emsp;&emsp;校</text></view>
+        <input class='content1_item_content_input' name="school" value='{{resume.school}}' placeholder='未填写'></input>
+      </view>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>学&emsp;&emsp;历</text></view>
+        <input class='content1_item_content_input' name="edu"  value='{{resume.edu}}' placeholder='未填写'></input>
+      </view>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>学&emsp;&emsp;院</text></view>
+      <input class='content1_item_content_input_long' name="academy" value='{{resume.academy}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>专&emsp;&emsp;业</text></view>
+      <input class='content1_item_content_input_long' name="major" value='{{resume.major}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>出生日期</text></view>
+        <picker class='content1_item_content_input' name="born" mode="date" value="{{date}}" start="1990-01-01" end="1999-12-31" bindchange="bindDateChange">
+          <view>{{date}}</view>
+        </picker>
+      </view>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>身&emsp;&emsp;高</text></view>
+        <picker class='content1_item_content_input' name="height" value='{{hindex}}' range='{{high}}'  bindchange="bindHighChange">
+          <view>{{high[hindex]}}cm</view>
+        </picker>
+      </view>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>政治面貌</text></view>
+        <picker class='content1_item_content_input' name="politic" value='{{pindex}}' range='{{politic}}'  bindchange="bindPoliticChange">
+          <view>{{politic[pindex]}}</view>
+        </picker>
+      </view>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>民&emsp;&emsp;族</text></view>
+        <picker class='content1_item_content_input' name="nation" value='{{nindex}}' range='{{nation}}'  bindchange="bindNationChange">
+          <view>{{nation[nindex]}}族</view>
+        </picker>
+      </view>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>籍&emsp;&emsp;贯</text></view>
+      <input class='content1_item_content_input_long' name="native" value='{{resume.native}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>就业意向</text></view>
+      <input class='content1_item_content_input_long' name="job" value='{{resume.job}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>兴趣爱好</text></view>
+      <input class='content1_item_content_input_long' name="hobby" value='{{resume.hobby}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>个人说明</text></view>
+      <input class='content1_item_content_input_long' name="intro" value='{{resume.intro}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>家庭地址</text></view>
+      <input class='content1_item_content_input_long' name="address" value='{{resume.address}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>住宿地址</text></view>
+      <input class='content1_item_content_input_long' name="dorm" value='{{resume.dorm}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content_txt'><text decode='true'>任职情况</text></view>
+      <input class='content1_item_content_input_long' name="office" value='{{resume.office}}' placeholder='未填写'></input>
+    </view>
+    <view class='content1_item'>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>联系电话</text></view>
+        <input class='content1_item_content_input' name="tel" value='{{resume.tel}}' placeholder='未填写'></input>
+      </view>
+      <view class='content1_item_content'>
+        <view class='content1_item_content_txt'><text decode='true'>手&emsp;&emsp;机</text></view>
+        <input class='content1_item_content_input' name="cell" value='{{resume.cell}}' placeholder='未填写'></input>
+      </view>
+    </view>
+  </view>
+  <view class='content1'>
+    <view class='content1_title'>学习经历</view>
+    <view class='content1_item1'>
+      <view class='content1_item_content_input' style='color:black;'><text decode='true'>时&emsp;&emsp;间</text></view>
+      <view class='content1_item1_school' style='color:black;'><text decode='true'>学&emsp;&emsp;校</text></view>
+      <view class='content1_item_content_txt1' style='color:black;'><text decode='true'>任&emsp;&emsp;职</text></view>
+    </view>
+    <view class='content1_item1'>
+      <picker class='content1_item_content_input' name="date1" mode="date" value="{{date1}}" start="1999-12-31"  bindchange="bindDate1Change">
+        <view>{{date1}}</view>
+      </picker>
+      <input class='content1_item1_school' name="school1" value='{{resume.school1}}'></input>
+      <input class='content1_item_content_txt1' name="office1" value='{{resume.office1}}'></input>
+    </view>
+    <view class='content1_item1'>
+      <picker class='content1_item_content_input' mode="date" name="date2" value="{{date2}}" start="1999-12-31"  bindchange="bindDate2Change">
+        <view>{{date2}}</view>
+      </picker>
+      <input class='content1_item1_school' name="school2" value='{{resume.school2}}'></input>
+      <input class='content1_item_content_txt1' name="office2" value='{{resume.office2}}'></input>
+    </view>
+    <view class='content1_item1'>
+      <picker class='content1_item_content_input' mode="date" name="date3" value="{{date3}}" start="1999-12-31"  bindchange="bindDate3Change">
+        <view>{{date3}}</view>
+      </picker>
+      <input class='content1_item1_school' name="school3" value='{{resume.school3}}'></input>
+      <input class='content1_item_content_txt1' name="office3" value='{{resume.office3}}'></input>
+    </view>
+  </view>
+  <view class='content1'>
+    <view class='content1_title'>奖惩情况</view>
+    <input class='content1_item_content_input_long1' name="rpsystem1" value='{{resume.rpsystem1}}'></input>
+    <input class='content1_item_content_input_long1' name="rpsystem2" value='{{resume.rpsystem2}}'></input>
+    <input class='content1_item_content_input_long1' name="rpsystem3" value='{{resume.rpsystem3}}'></input>
+    <input class='content1_item_content_input_long1' name="rpsystem4" value='{{resume.rpsystem4}}'></input>
+    <input class='content1_item_content_input_long1' name="rpsystem5" value='{{resume.rpsystem5}}'></input>
+    <input class='content1_item_content_input_long1' name="rpsystem6" value='{{resume.rpsystem6}}'></input>
+  </view>
+  <!--<view class='content1'>
+    <view class='content1_title'>介绍/舞蹈视频（仅mp4）</view>
+    <view class='content1_item_video'>
+      <video catchtap='chooseVideoTap' class='content1_item_video_detail' src='{{video}}'></video>
+    </view>
+  </view>-->
+  </scroll-view>
+  <button class='btn' form-type='submit' hidden='{{hide}}'><text decode='true'>保&emsp;&emsp;存</text></button>
+  <button class='btn' bindtap='preview' hidden='{{!hide}}'><text decode='true'>去&emsp;预&emsp;览</text></button>
+  </form>
+</view>

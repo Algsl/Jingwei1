@@ -1,0 +1,42 @@
+.main{
+  margin:20rpx;
+  margin-top:20%;
+}
+.title{
+  width: 100%;
+  height: 22px;
+  margin-left: 5.3%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 18px;
+  color: #202437;
+}
+.content{
+  width: 89.3%;
+  margin-left: 5.3%;
+  margin-top: 15px;
+  font-size: 28rpx;
+  line-height: 24px;
+  color: #202437;
+}
+.content_item{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 15rpx;
+}
+.content_item_txt{
+  width: 500rpx;
+}
+.content_item_copy{
+  width: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  background:#F7F9FC;
+}
+.txt{
+  line-height: 80rpx;
+}

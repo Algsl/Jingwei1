@@ -1,0 +1,33 @@
+<view class='main'>
+  <view class='top_bar'  hidden='{{jobhunter}}'>
+    <picker class='picker' bindchange='change' value='{{index0}}' range='{{array}}' range-key='title'>
+      <view>{{array[index0].title}}<text style='margin-left:20rpx;color:#F59700'>选择其他</text></view>
+    </picker>
+  </view>
+  <scroll-view class='sv' scroll-y="true" style='height:{{winHeight-60}}px'>
+    <view wx:for="{{user}}" wx:key="key">
+      <view wx:if="{{item.itype=='merchant'}}">
+        <view class='item1'>
+          <image class='img' src='{{item.img}}'></image>
+          <view class='content'>
+            <view class='content_msg'>{{item.msg}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='item1'>
+          <view class='content1'>
+            <view class='content_msg1'>{{item.msg}}</view>
+          </view>
+          <image class='img' src='{{item.img}}'></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='bottom'>
+    <input name="msg" class='bottom_input' bindinput='textarea' value="{{input}}"></input>
+    <button class='bottom_btn' bindtap='send'>发送</button>
+  </view>
+</view>
+
+

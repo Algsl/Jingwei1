@@ -1,0 +1,37 @@
+<view class='main'>
+  <view class='left'>
+    <scroll-view scroll-y="true" style='height:1100rpx;' scroll-with-animation="true" scroll-into-view="true">
+      <view wx:for="{{left}}" bindtap='left' wx:key="item">
+        <view class="{{tselect==item.id?'on':'off'}}" id="{{item.id}}">{{item.type}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='right'>
+    <scroll-view scroll-y="true" style='height:1100rpx;' bindscroll="scroll" scroll-top="{{scrollTop}}" scroll-into-view="{{'inToview'+regId}}" scroll-with-animation="true">
+      <view class='right_type' id="{{'inToview'+item.id}}">{{txt}}</view>
+      <view wx:for="{{right}}" wx:key="item">
+        <navigator  hidden='{{need<=0}}' url='../detail/detail?id={{item.id}}' hover-class='navigator-hover' class='content_item'>
+          <view class='item_left'>
+            <image class='item_left_img' src='{{item.img}}'></image>
+          </view>
+          <view class='item_right'>
+            <view class='item_right_top'>
+              <view class='item_right_top_left'>{{item.title}}</view>
+              <view class='item_right_top_right'>￥{{item.price}}</view>
+              <view wx:if="{{ctype==0}}" class='item_right_top_right1'>天</view>
+              <view wx:elif="{{ctype==1}}" class='item_right_top_right1'>次</view>
+              <view wx:elif="{{ctype==2}}" class='item_right_top_right1'>小时</view>
+              <view wx:elif="{{ctype==3}}" class='item_right_top_right1'>周</view>
+              <view wx:elif="{{ctype==4}}" class='item_right_top_right1'>月</view>
+            </view>
+            <view class='item_right_bottom'>
+              <image class='item_right_bottom_left' src='../../../images/location.png'></image>
+              <view class='item_right_bottom_right'>{{item.area}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class='nomore'>没有更多了</view>
+    </scroll-view>
+  </view>
+</view>

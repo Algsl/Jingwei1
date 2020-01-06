@@ -191,8 +191,7 @@
 }
 .content5_btn{
   width: 670rpx;
-  height: 72rpx;
-  line-height: 72rpx;
+  height: 60rpx;
   margin-left: 40rpx;
   margin-top: 24rpx;
   text-align: center;

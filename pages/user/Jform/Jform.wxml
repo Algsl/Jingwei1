@@ -1,0 +1,64 @@
+<view class='main'>
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit >
+    <image hidden='{{img!=null}}' src='../../../images/add.png' style='width:48px;height:48px;position:absolute;top:31.6px;left:308px;'></image>
+    <scroll-view scroll-y="true" style='width:100%;height:530px;'>
+      <view class='content1'>
+        <view class='content1_left'>
+          <view class='content1_left_top'  bindtap='showP'>查看学生证示例</view>
+          <view class='content1_left_bottom'>学生证信息应清晰可见，个人信息如实填写</view>
+        </view>
+        <image  class='content1_right' name="img" catchtap="chooseImageTap" src='{{img}}'></image>
+      </view>
+      <view hidden='{{photo}}'>
+        <image style='margin-left:30px;' src='https://haijiao.pw/img/examp/example1.png'></image>
+      </view>
+      <view class='content2'>
+        <view class='content2_top'>学号</view>
+        <input class='content2_bottom' placeholder='请输入学号' placeholder-style='font-size:14px;color:#C6C8D1'  type='number' name="num" value='{{userInfo.num}}'></input>
+      </view>
+      <view class='content2'>
+        <view class='content2_top'>姓名</view>
+        <input class='content2_bottom' placeholder='请输入姓名' placeholder-style='font-size:14px;color:#C6C8D1' name="name" value='{{userInfo.name}}'></input>
+      </view>
+      <view class='content3'>
+        <view class='content3_left'>性别</view>
+        <radio-group class='content3_right'  name="sex">
+          <radio class='content3_right_item'  value='0' checked='{{userInfo.sex==0}}'>男</radio>
+          <radio class='content3_right_item'  value='1' checked='{{userInfo.sex==1}}'>女</radio>
+        </radio-group>
+      </view>
+      <view class='content3'>
+        <view class='content3_left'>出生日期</view>
+        <view class='content3_right1'>
+          <picker mode="date"  start="1980-01-01" end="1999-12-31" bindchange='datachange'>
+            <view style='font-size:14px;color:#797E8B;'>{{born}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class='content4'>
+        <view class='content4_top'>手机号</view>
+        <view class='content4_bottom'>
+          <input class='content4_bottom_left' placeholder='请输入手机号' placeholder-style='font-size:14px;color:#C6C8D1'  type='number' name="mobile" value='{{mobile}}'></input>
+          <button class='content4_bottom_right' open-type='getPhoneNumber' bindgetphonenumber='getPhone'><text decode='true'>获&emsp;取</text></button>
+        </view>
+      </view>
+      <view class='content5'>
+        <checkbox class='content5_left'  bindtap='choosed'></checkbox>
+        <view class='content5_right'  bindtap='obey'>遵守精卫兼职用户协议</view>
+      </view>
+      <!--<view class='content2'>
+        <view class='content2_top'>个人简介</view>
+        <input class='content2_bottom' placeholder='简单介绍一下你自己吧' placeholder-style='color:#C6C8D1' name="intro"  value='{{userInfo.intro}}'></input>
+      </view>-->
+      <!--<view class='content7'>
+        <button class='content7_btn' bindtap='pay'  disabled='{{!npay}}'>缴纳保证金</button>
+      </view>-->
+    </scroll-view>
+    <view class='content6'>
+      <button class='content6_left' form-type='reset'>重置</button>
+      <!--<button class='content6_right' form-type='submit' disabled='{{nobey || npay}}'>保存</button>-->
+      <button class='content6_right' form-type='submit' disabled='{{nobey}}'>保存</button>
+    </view>
+  </form>
+</view>
+

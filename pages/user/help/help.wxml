@@ -1,0 +1,23 @@
+<view class='main'>
+  <view class='title'>
+    <text class='txt'>如您遇到问题，请联系开发者进行解决</text>
+  </view>
+  <view class='content'>
+    <view class='content_item' style='display:flex;flex-direction:row;'>
+      <text class='txt' decode='true' class='content_item_txt'>&emsp;&emsp;联系电话：18435224024</text>
+      <view bindtap='copy' data-txt='18435224024' class='content_item_copy'>复制</view>
+    </view>
+    <view class='content_item' style='display:flex;flex-direction:row;'>
+      <text class='txt' decode='true' class='content_item_txt'>&emsp;&emsp;微信号码：AL7485963210</text>
+      <view bindtap='copy' data-txt='AL7485963210' class='content_item_copy'>复制</view>
+    </view>
+    <view class='content_item' style='display:flex;flex-direction:row;'>
+      <text class='txt' decode='true' class='content_item_txt'>&emsp;&emsp;QQ&nbsp;号码：3271499415</text>
+      <view bindtap='copy' data-txt='3271499415' class='content_item_copy'>复制</view>
+    </view>
+    <view class='content_item' style='display:flex;flex-direction:row;'>
+      <text class='txt' decode='true' class='content_item_txt'>&emsp;&emsp;QQ&nbsp;邮箱：3271499415@qq.com</text>
+      <view bindtap='copy' data-txt='3271499415@qq.com' class='content_item_copy'>复制</view>
+    </view>
+  </view>
+</view>

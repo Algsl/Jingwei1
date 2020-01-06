@@ -1,0 +1,72 @@
+<view wx:if='{{jobhunter}}' class='main'>
+  <view class='content1'>
+    <image class='content1_left' src='https://haijiao.pw/img/logo1.jpg'></image>
+    <view class='content1_right'>精卫之家欢迎您</view>
+  </view>
+  <view class='content2'>
+    <view class='content2_top'>
+      <view class='content2_top_left'>欢迎入住“精卫”之家</view>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+    </view>
+    <view class='content2_bottom'>各位俊男靓女，在我们这里：挣钱不是问题，你若敢来，我们就敢提供最优质的服务!
+    </view>
+  </view>
+  <view class='content3'>
+    <view class='content3_top'>我们承诺：</view>
+    <view class='content3_bottom'>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/welcome.png'></image>
+        <view class='content3_bottom_item_right'>绝无中介赚差价</view>
+      </view>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/welcome.png'></image>
+        <view class='content3_bottom_item_right'>绝无坑蒙拐骗</view>
+      </view>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/welcome.png'></image>
+        <view class='content3_bottom_item_right'>绝不影响学习</view>
+      </view>
+    </view>
+  </view>
+  <view class='content4'>
+    <view class='content4_item'>各位宝宝们，勿忘初心，扬帆起航！我们想之所想，做之所做——让生活更简单！</view>
+  </view>
+</view>
+<view wx:else class='main'>
+  <view class='content1'>
+    <image class='content1_left' src='https://haijiao.pw/img/logo1.jpg'></image>
+    <view class='content1_right'>精卫之家欢迎您</view>
+  </view>
+  <view class='content2'>
+    <view class='content2_top'>
+      <view class='content2_top_left'>欢迎入住“精卫”之家</view>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+    </view>
+    <view class='content2_bottom'>各位商人大咖，我们这里是梦想的孵化基地，也是创造价值的最佳场所，提供优质服务的团队。
+    </view>
+  </view>
+  <view class='content3'>
+    <view class='content3_top'>我们保证：</view>
+    <view class='content3_bottom'>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/insist.png'></image>
+        <view class='content3_bottom_item_right'>拥有百分百的热情干劲</view>
+      </view>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/insist.png'></image>
+        <view class='content3_bottom_item_right'>拥有恪尽职守的工作态度</view>
+      </view>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/insist.png'></image>
+        <view class='content3_bottom_item_right'>发扬吃苦耐劳的精神</view>
+      </view>
+    </view>
+  </view>
+  <view class='content4'>
+    <view class='content4_item'>为企业注入新的活力，创造更多的价值，一路遥遥领先！</view>
+  </view>
+</view>

@@ -1,4 +1,4 @@
-// pages/list/search/search.js
+const util = require('../../../utils/util.js')
 Page({
 
   /**
@@ -29,6 +29,7 @@ Page({
       url: 'https://jwjob.gesilaa6.club/index.php/index/partjob/getLikelyPartjob.html',
       data: {title:e.detail.value.input},
       success: function (res) {
+        util.formatArray(res.data.data,1)
         that.setData({
           newImage0: res.data.data
         })
