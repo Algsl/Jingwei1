@@ -41,7 +41,7 @@ Page({
         //console.log("登录：" + res.code + " " + e.detail.encryptedData + " " + e.detail.iv)
         //调用短信接口，进行短信发送，参数为：code,encryptedData,iv,session_key
         wx.request({
-          url: 'https://haijiao.pw/test/demo.php',
+          url: 'https://jwjob.gesilaa6.club/SMS/demo.php',
           data: { code: res.code, encryptedData: e.detail.encryptedData, iv: e.detail.iv, session_key: app.globalData.session_key },
           success: function (res) {
             app.globalData.phone = res.data.phoneNumber

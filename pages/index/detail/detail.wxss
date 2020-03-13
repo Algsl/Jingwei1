@@ -191,12 +191,13 @@
 }
 .content5_btn{
   width: 670rpx;
-  height: 60rpx;
+  height: 40px;
+  line-height: 40px;
   margin-left: 40rpx;
   margin-top: 24rpx;
   text-align: center;
   font-size: 28rpx;
-  border-radius: 4rpx;
+  border-radius: 5px;
   color: #FFFFFF;
   background: #1EC996;
 }

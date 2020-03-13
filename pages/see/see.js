@@ -14,7 +14,7 @@ Page({
     imgList: [
       /*{ id: 1, img: 'https://haijiao.pw/img/swiper/swiper1.png' },
       { id: 2, img: 'https://haijiao.pw/img/swiper/swiper3.png' },*/
-      { id: 3, img: 'https://haijiao.pw/jingwei/swiper1.png' },
+      { id: 3, img: 'https://jwjob.gesilaa6.club/img/swiper1.png' },
     ],
   },
   /**

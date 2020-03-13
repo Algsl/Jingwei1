@@ -39,7 +39,7 @@
         <view class='content4_top'>手机号</view>
         <view class='content4_bottom'>
           <input class='content4_bottom_left' placeholder='请输入手机号' placeholder-style='font-size:14px;color:#C6C8D1'  type='number' name="mobile" value='{{mobile}}'></input>
-          <button class='content4_bottom_right' open-type='getPhoneNumber' bindgetphonenumber='getPhone'><text decode='true'>获&emsp;取</text></button>
+          <button class="content4_bottom_right" open-type='getPhoneNumber' bindgetphonenumber='getPhone'><text decode='true'>获&emsp;取</text></button>
         </view>
       </view>
       <view class='content5'>

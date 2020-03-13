@@ -306,10 +306,10 @@
   color: #515666;
 }
 .content4_bottom_right{
-  width: 70px;
-  height: 25px;
-  line-height: 25px;
-  margin-left: 2.7%;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 10px;
   text-align: center;
   font-size: 11px;
   color: #FFFFFF;

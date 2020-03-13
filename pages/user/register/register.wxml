@@ -16,7 +16,7 @@
     <view class='content'>
       <image class='content_img' src='../../../images/phone.png'></image>
       <input class='content_input1' type='number' name="mobile" placeholder='手机号' placeholder-style='font-size:28rpx;color:#C6C8D1' value='{{mobile}}'></input>
-      <button class='content_btn' style="width:200rpx;height:30rpx;" open-type='getPhoneNumber' bindgetphonenumber='getPhone'>本机号码</button>
+      <button class='content_btn' open-type='getPhoneNumber' bindgetphonenumber='getPhone'>本机号码</button>
     </view>
     <view class='content' hidden>
       <image class='content_img' src='../../../images/verification.png'></image>
